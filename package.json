@@ -1,8 +1,13 @@
 {
   "name": "ccbr-app",
   "version": "0.0.1",
+<<<<<<< HEAD
   "author": "Code Club Brasil",
   "homepage": "https://github.com/CodeClubBrasil/ccbr-app",
+=======
+  "author": "Ionic Framework",
+  "homepage": "http://ionicframework.com/",
+>>>>>>> First commit
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -28,6 +33,7 @@
     "@ionic/storage": "2.1.3",
     "@ngx-translate/core": "8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
+<<<<<<< HEAD
     "cordova-android": "^7.0.0",
     "cordova-ios": "^4.5.4",
     "cordova-plugin-device": "^2.0.1",
@@ -35,6 +41,8 @@
     "cordova-plugin-ionic-webview": "^1.1.16",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
+=======
+>>>>>>> First commit
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
     "rxjs": "5.5.2",
@@ -45,6 +53,7 @@
     "@ionic/app-scripts": "3.1.8",
     "typescript": "2.4.2"
   },
+<<<<<<< HEAD
   "config": {
     "ionic_webpack": "./config/webpack.config.js"
   },
@@ -63,3 +72,7 @@
     ]
   }
 }
+=======
+  "description": "An Ionic project"
+}
+>>>>>>> First commit
