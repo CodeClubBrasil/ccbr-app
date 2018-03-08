@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addClub()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let club of currentClubs">
+      <button ion-item (click)="openClub(club)">
+        <ion-avatar item-start>
+            <h1>{{club.name}}</h1>
+          <!-- <img [src]="club.profilePic" /> -->
+        </ion-avatar>
+        <h2>{{club.name}}</h2>
+        <p>{{club.contact}}</p>
+        <!-- <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note> -->
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteClub(club)">
+          {{ 'DELETE_BUTTON' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
