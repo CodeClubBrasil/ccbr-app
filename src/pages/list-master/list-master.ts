@@ -10,10 +10,18 @@ import { ClubProvider } from '../../providers/providers';
   templateUrl: 'list-master.html'
 })
 export class ListMasterPage {
-  currentClubs: Club[];
+  currentClubs: any;
 
   constructor(public navCtrl: NavController, public clubs: ClubProvider, public modalCtrl: ModalController) {
-    this.currentClubs = this.clubs.query;
+    this.getClubs()
+  }
+
+  private getClubs() {
+    this.clubs.query()
+    .then(data => {
+      this.currentClubs = data
+      console.log(this.currentClubs)
+    })
   }
 
   /**

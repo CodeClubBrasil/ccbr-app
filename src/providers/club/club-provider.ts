@@ -9,7 +9,8 @@ export class ClubProvider {
   constructor(public api: Api) { }
 
   query(params?: any) {
-    return this.api.get('/clubs', params);
+    // It is bringing data from communities because listAllClubs Code Club sandbox route is getting some errors.
+    return this.api.get('communities', params);
   }
 
   add(club: Club) {

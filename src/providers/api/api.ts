@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'https://private-anon-c83212923f-codeclubworldapiv2.apiary-mock.com'
-
+  url: string = 'https://private-anon-650c66628a-codeclubworldapiv2.apiary-mock.com'
+  
   constructor(public http: HttpClient) {
   }
 
-  get(endpoint: string, params?: any, reqOpts?: any) {
+  async get(endpoint: string, params?: any, reqOpts?: any) {
     if (!reqOpts) {
       reqOpts = {
         params: new HttpParams()
@@ -26,7 +26,13 @@ export class Api {
       }
     }
 
-    return this.http.get(this.url + '/' + endpoint, reqOpts);
+    return new Promise(resolve => {
+      this.http.get(this.url+ '/' + endpoint, reqOpts).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
   }
 
   post(endpoint: string, body: any, reqOpts?: any) {
