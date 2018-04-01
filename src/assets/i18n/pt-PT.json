@@ -28,7 +28,12 @@
   "SIGNUP_ERROR": "Não foi possível criar a sua conta. Por favor confirme os seus dados e tente novamente.",
   "SIGNUP_BUTTON": "Criar conta",
 
-  "LIST_MASTER_TITLE": "Items",
+  "LIST_MASTER_TITLE": "Clubs",
+  
+  "LOOKING_FOR_VOLUNTEERS": "Procurando por voluntários",
+  "RUN_WITHOUT_VOLUNTEER" : "Funciona sem voluntários",
+  "HAPPY_TO_BE_CONTACTED" : "Gostaria de ser contactado",
+  "ADDRESS": "Endereço", 
 
   "ITEM_CREATE_TITLE": "Novo Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Adicionar Imagem",
