@@ -33,12 +33,9 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-<<<<<<< HEAD
 
 #Ignore ENV VAR files
 **/environment.dev.ts
 **/environment.ts
 !**/environment.model.ts
 
-=======
->>>>>>> First commit

@@ -18,18 +18,9 @@
     <ion-item-sliding *ngFor="let club of currentClubs">
       <button ion-item (click)="openClub(club)">
         <ion-avatar item-start>
-<<<<<<< HEAD
             <h3>{{club.name}}</h3>
         </ion-avatar>
         <p class="club-city">{{club.venue.address.city}}</p>
-=======
-            <h1>{{club.name}}</h1>
-          <!-- <img [src]="club.profilePic" /> -->
-        </ion-avatar>
-        <h2>{{club.name}}</h2>
-        <p>{{club.contact}}</p>
-        <!-- <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note> -->
->>>>>>> First commit
       </button>
 
       <ion-item-options>
