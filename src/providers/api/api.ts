@@ -1,12 +1,13 @@
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ENV } from '@app/env'
 
 /**
  * Api is a generic REST Api handler. Set your API url first.
  */
 @Injectable()
 export class Api {
-  url: string = 'https://api.codeclubworld.org'
+  url: string = ENV.API_URL
   
   constructor(public http: HttpClient) {
   }

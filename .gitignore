@@ -33,3 +33,9 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+
+#Ignore ENV VAR files
+**/environment.dev.ts
+**/environment.ts
+!**/environment.model.ts
+

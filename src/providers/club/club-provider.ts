@@ -3,10 +3,11 @@ import { Injectable } from '@angular/core';
 import { Club } from '../../models/club';
 import { Api } from '../api/api';
 import { HttpHeaders } from '@angular/common/http';
+import { ENV } from '@app/env'
 
 @Injectable()
 export class ClubProvider {
-  token:string = '***REMOVED***'
+  token:string = ENV.TOKEN
   httpOptions  = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
