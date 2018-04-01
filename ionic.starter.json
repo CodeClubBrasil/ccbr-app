@@ -1,5 +1,5 @@
 {
-  "name": "Ionic Super Starter",
+  "name": "Code Club mobile app to support volunteers",
   "baseref": "master",
   "welcome": "Welcome to the \u001b[36m\u001b[1mCODE CLUB APPLICATION\u001b[22m\u001b[39m!\n\n",
   "packageJson": {

@@ -8,7 +8,7 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
-  "TAB1_TITLE": "Items",
+  "TAB1_TITLE": "Clubs",
   "TAB2_TITLE": "Search",
   "TAB3_TITLE": "Settings",
 
@@ -17,7 +17,7 @@
   "WELCOME_SKIP_BUTTON": "Skip",
   "WELCOME_CONTINUE_BUTTON": "Continue",
 
-  "WELCOME_INTRO": "The starting point for your next great Ionic app",
+  "WELCOME_INTRO": "Welcome to the Code Club application",
 
   "SETTINGS_TITLE": "Settings",
   "SETTINGS_OPTION1": "Option 1",
@@ -45,7 +45,7 @@
   "HAPPY_TO_BE_CONTACTED" : "Would enjoy to be contacted",
   "ADDRESS": "Address", 
 
-  "ITEM_CREATE_TITLE": "New Item",
+  "ITEM_CREATE_TITLE": "New Club",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
   "ITEM_NAME_PLACEHOLDER": "Name",
