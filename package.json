@@ -28,6 +28,9 @@
     "@ionic/ng-toolkit": "^1.0.0",
     "@ionic/pro": "2.0.3",
     "@ionic/schematics-angular": "^1.0.0",
+    "@ionic/storage": "^2.1.3",
+    "cordova-plugin-ionic": "^5.0.5",
+    "cordova-sqlite-storage": "^2.3.3",
     "core-js": "^2.5.3",
     "rxjs": "6.2.2",
     "zone.js": "^0.8.26"
@@ -57,5 +60,10 @@
     "tslint": "~5.11.0",
     "typescript": "~2.7.2"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-sqlite-storage": {}
+    }
+  }
 }
