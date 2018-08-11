@@ -1,0 +1,63 @@
+{
+    "BACK_BUTTON_TEXT": "Voltar",
+  
+    "NAME": "Nome",
+    "EMAIL": "Email",
+    "USERNAME": "Nome de Usuário",
+    "PASSWORD": "Senha",
+    "LOGIN": "Entrar",
+    "SIGNUP": "Cadastre-se",
+  
+    "TAB1_TITLE": "Itens",
+    "TAB2_TITLE": "Busca",
+    "TAB3_TITLE": "Configurações",
+  
+    "MAP_TITLE": "Mapa",
+  
+    "WELCOME_SKIP_BUTTON": "Pular",
+    "WELCOME_CONTINUE_BUTTON": "Continuar",
+  
+    "WELCOME_INTRO": "Bem vindo a aplicação do Code Club",
+  
+    "SETTINGS_TITLE": "Configurações",
+    "SETTINGS_OPTION1": "Opção 1",
+    "SETTINGS_OPTION2": "Opção 2",
+    "SETTINGS_OPTION3": "Opção 3",
+    "SETTINGS_OPTION4": "Opção 4",
+  
+    "SETTINGS_PROFILE_BUTTON": "Editar Perfil",
+  
+    "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+  
+    "WELCOME_TITLE": "Bem-vindo",
+  
+    "LOGIN_TITLE": "Entrar",
+    "LOGIN_ERROR": "Não foi possível entrar na sua conta. Verifique seus dados e tente novamente.",
+    "LOGIN_BUTTON": "Entrar",
+    "SIGNUP_TITLE": "Cadastre-se",
+    "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
+    "SIGNUP_BUTTON": "Cadastre-se",
+  
+    "LIST_MASTER_TITLE": "Clubs",
+  
+    "LOOKING_FOR_VOLUNTEERS": "Procurando por voluntários",
+    "RUN_WITHOUT_VOLUNTEER" : "Funciona sem voluntários",
+    "HAPPY_TO_BE_CONTACTED" : "Gostaria de ser contactado",
+  
+    "ADDRESS": "Endereço", 
+  
+    "ITEM_CREATE_TITLE": "Novo Item",
+    "ITEM_CREATE_CHOOSE_IMAGE": "Adicionar Imagem",
+  
+    "ITEM_NAME_PLACEHOLDER": "Nome",
+    "ITEM_ABOUT_PLACEHOLDER": "Sobre",
+  
+    "DONE_BUTTON": "Pronto",
+    "CANCEL_BUTTON": "Cancelar",
+    "DELETE_BUTTON": "Apagar",
+  
+    "CARDS_TITLE": "Social",
+  
+    "SEARCH_TITLE": "Busca",
+    "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\""
+  }
