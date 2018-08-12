@@ -3,7 +3,6 @@
     "PASSWORD": "Password",
     "EMAIL": "Email",
     "LOGIN": "Entrar",
-    "SIGNUP": "Registar",
     "FORGOT_PASSWORD": "Esqueceste a tua senha?",
   
     "TAB1_TITLE": "Items",
@@ -25,7 +24,7 @@
     "LOGIN_TITLE": "Entrar",
     "LOGIN_ERROR": "Não foi possível entrar na sua conta. Por favor confirme os seus dados e tente novamente.",
     "LOGIN_BUTTON": "Entrar",
-    "SIGNUP_TITLE": "Criar conta",
+    "SIGNUP_TITLE": "Registo",
     "SIGNUP_ERROR": "Não foi possível criar a sua conta. Por favor confirme os seus dados e tente novamente.",
     "SIGNUP_BUTTON": "Criar conta",
   

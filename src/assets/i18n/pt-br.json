@@ -6,7 +6,6 @@
     "USERNAME": "Nome de Usuário",
     "PASSWORD": "Senha",
     "LOGIN": "Entrar",
-    "SIGNUP": "Cadastre-se",
     "FORGOT_PASSWORD": "Esqueceu sua senha?",
   
     "TAB1_TITLE": "Itens",
@@ -35,7 +34,7 @@
     "LOGIN_TITLE": "Entrar",
     "LOGIN_ERROR": "Não foi possível entrar na sua conta. Verifique seus dados e tente novamente.",
     "LOGIN_BUTTON": "Entrar",
-    "SIGNUP_TITLE": "Cadastre-se",
+    "SIGNUP_TITLE": "Registro",
     "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
     "SIGNUP_BUTTON": "Cadastre-se",
   
