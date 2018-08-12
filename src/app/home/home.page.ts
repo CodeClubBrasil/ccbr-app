@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { NavController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,16 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePage {
   account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
+    email: '',
+    password: ''
   };
   private loginErrorString: string;
 
-  constructor(public translateService: TranslateService) {
+  constructor(
+    public navCtrl: NavController,
+    public toastCtrl: ToastController,
+    public translateService: TranslateService
+  ) {
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     });

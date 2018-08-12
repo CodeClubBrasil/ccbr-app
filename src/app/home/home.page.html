@@ -1,18 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Home</ion-title>
+    <ion-title>{{ 'HOME_TITLE' | translate }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <form (submit)="doLogin()">
     <ion-list>
+      <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
 
       <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-label position="floating">{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
-
+      
       <!--
         Want to use a Username instead of an Email? Here you go:
         <ion-item>
@@ -22,13 +23,20 @@
         -->
 
       <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input required type="password" [(ngModel)]="account.password" name="password"></ion-input>
       </ion-item>
 
       <div padding>
-        <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        <ion-button shape="round" color="primary" fill="outline">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
       </div>
+      <div padding>
+        <a>{{ 'FORGOT_PASSWORD' | translate }}</a>
+        <div>
+          <a>{{ 'SIGNUP' | translate }}</a>
+        </div>
+      </div>
+
 
     </ion-list>
   </form>
