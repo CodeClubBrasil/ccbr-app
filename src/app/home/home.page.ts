@@ -25,4 +25,8 @@ export class HomePage {
       this.loginErrorString = value;
     });
   }
+
+  signUp() {
+    this.router.navigate(['/signup']);
+  }
 }
