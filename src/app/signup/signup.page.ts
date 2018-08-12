@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-signup',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
+  account: { email: string, password: string } = {
+    email: '',
+    password: ''
+  };
 
-  constructor() { }
+  private signUpErrorString: string;
+
+  constructor(
+    public translateService: TranslateService
+  ) {
+    this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
+      this.signUpErrorString = value;
+    });
+  }
 
   ngOnInit() {
+  }
+
+  signUp() {
   }
 
 }

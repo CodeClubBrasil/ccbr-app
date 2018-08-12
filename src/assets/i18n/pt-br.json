@@ -3,6 +3,7 @@
   
     "NAME": "Nome",
     "EMAIL": "Email",
+    "CONFIRM_EMAIL": "Confirme seu email",
     "USERNAME": "Nome de Usuário",
     "PASSWORD": "Senha",
     "LOGIN": "Entrar",
@@ -37,6 +38,7 @@
     "SIGNUP_TITLE": "Registro",
     "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
     "SIGNUP_BUTTON": "Cadastre-se",
+    "SIGNUP_SUBMIT": "Cadastrar",
   
     "LIST_MASTER_TITLE": "Clubs",
   

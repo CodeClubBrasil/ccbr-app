@@ -5,7 +5,7 @@
   </ion-header>
   
   <ion-content padding>
-    <form (submit)="doLogin()">
+    <form (submit)="signUp()">
       <ion-list>
         <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
   
@@ -33,16 +33,9 @@
         </ion-item>
   
         <div padding>
-          <ion-button shape="round" color="primary" fill="outline">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
-        </div>
-        <div padding>
-          <a>{{ 'FORGOT_PASSWORD' | translate }}</a>
-          <div>
-            <a>{{ 'SIGNUP' | translate }}</a>
-          </div>
-        </div>
-  
-  
+          <ion-button shape="round" color="primary" fill="outline">{{ 'SIGNUP_SUBMIT' | translate }}</ion-button>
+        </div>  
+      
       </ion-list>
     </form>
   </ion-content>
