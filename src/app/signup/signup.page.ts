@@ -33,7 +33,7 @@ export class SignupPage implements OnInit {
       { type: 'pattern', message: 'Enter a valid email.' },
       { type: 'validUseremail', message: 'Your email has already been taken.' }
     ],
-    'confirm_emails': [
+    'confirm_email': [
       { type: 'required', message: 'Confirm password is required' }
     ],
     'matching_emails': [
