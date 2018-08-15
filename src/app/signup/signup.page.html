@@ -7,8 +7,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <form [formGroup]="new_signup_form" (submit)="signUp(new_signup_form.value)">
+<ion-content padding class="form-content">
+  <form class="form" [formGroup]="new_signup_form" (submit)="signUp(new_signup_form.value)">
     <!-- <form [formGroup]="new_signup_form"> -->
     <ion-list>
       <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
@@ -20,7 +20,7 @@
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.email">
-            <div class="error-message" *ngIf="new_signup_form.get('email').hasError(validation.type) && (new_signup_form.get('email').dirty || new_signup_form.get('email').touched)">
+            <div class="error-message" *ngIf="new_signup_form.get('matching_emails').get('email').hasError(validation.type) && (new_signup_form.get('matching_emails').get('email').dirty || new_signup_form.get('matching_emails').get('email').touched)">
               {{ validation.message }}
             </div>
           </ng-container>
@@ -32,7 +32,7 @@
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.confirm_email">
-            <div class="error-message" *ngIf="new_signup_form.get('matching_emails').get('confirm_email').hasError(validation.type) && (new_signup_form.get('matching_emails').get('confirm_email').ditry || new_signup_form.get('matching_emails').get('confirm_email').touched)" >
+            <div class="error-message" *ngIf="new_signup_form.get('matching_emails').get('confirm_email').hasError(validation.type) && (new_signup_form.get('matching_emails').get('confirm_email').ditry || new_signup_form.get('matching_emails').get('confirm_email').touched)">
               {{validation.message}}
             </div>
           </ng-container>
@@ -53,7 +53,7 @@
       </ion-item>
 
       <div padding>
-        <ion-button shape="round" expand="block" type="submit" [disabled]="!new_signup_form.valid">{{ 'SIGNUP_SUBMIT' | translate }}</ion-button>
+        <ion-button shape="round" expand="block" type="submit">{{ 'SIGNUP_SUBMIT' | translate }}</ion-button>
         <!-- <ion-button shape="round" expand="block" color="primary" fill="outline" (click)=signUp(new_signup_form.value)>{{ 'SIGNUP_SUBMIT' | translate }}</ion-button> -->
       </div>
 
