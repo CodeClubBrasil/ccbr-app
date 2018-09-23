@@ -64,5 +64,16 @@
     "SEARCH_TITLE": "Busca",
     "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
 
-    "EMAIL_MIN_LENGTH": "O Email deve conter no mínimo 20 caracteres."
+    "EMAIL_MIN_LENGTH": "O Email deve conter no mínimo 20 caracteres.",
+    "EMAIL_MAX_LENGTH": "O Email não pode ter mais do que 100 caracteres.",
+    "EMAIL_VALID": "Entre um email válido.",
+    "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
+    "EMAIL_REQUIRED": "O campo email é necessário.",
+
+    "PASSWORD_REQUIRED": "O campo senha é necessário.",
+    "PASSWORD_MIN_LENGTH": "A senha deve ter no mínimo 8 caractres.",
+    "PASSWORD_VALID": "Sua senha deve conter no mínimo uma letra maíscula, uma mínuscula e um número.",
+    "PASSWORD_MISMATCH": "A senha não confere.",
+
+    "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."
   }
