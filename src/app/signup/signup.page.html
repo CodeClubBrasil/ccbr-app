@@ -13,44 +13,45 @@
     <ion-list>
       <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
 
-      <div formGroupName="matching_emails">
+      <div formGroupName="emails">
         <ion-item>
           <ion-label position="floating">{{ 'EMAIL' | translate }}</ion-label>
           <ion-input type="text" formControlName="email" required></ion-input>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.email">
-            <div class="error-message" *ngIf="new_signup_form.get('matching_emails').get('email').hasError(validation.type) && (new_signup_form.get('matching_emails').get('email').dirty || new_signup_form.get('matching_emails').get('email').touched)">
+            <div class="error-message" *ngIf="new_signup_form.get('emails').get('email').hasError(validation.type) && (new_signup_form.get('emails').get('email').dirty || new_signup_form.get('emails').get('email').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div formGroupName="matching_passwords">
+        <ion-item>
+          <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
+          <ion-input type="text" formControlName="password" required></ion-input>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validation_messages.password">
+            <div class="error-message" *ngIf="new_signup_form.get('matching_passwords').get('password').hasError(validation.type) && (new_signup_form.get('matching_passwords').get('password').dirty || new_signup_form.get('matching_passwords').get('password').touched)">
               {{ validation.message }}
             </div>
           </ng-container>
         </div>
 
         <ion-item>
-          <ion-label position="floating">{{ 'CONFIRM_EMAIL' | translate }}</ion-label>
-          <ion-input type="text" formControlName="confirm_email" name="confirm_email"></ion-input>
+          <ion-label position="floating">{{ 'CONFIRM_PASSWORD' | translate }}</ion-label>
+          <ion-input type="text" formControlName="confirm_password" name="confirm_password"></ion-input>
         </ion-item>
         <div class="validation-errors">
-          <ng-container *ngFor="let validation of validation_messages.confirm_email">
-            <div class="error-message" *ngIf="new_signup_form.get('matching_emails').get('confirm_email').hasError(validation.type) && (new_signup_form.get('matching_emails').get('confirm_email').ditry || new_signup_form.get('matching_emails').get('confirm_email').touched)">
-              {{validation.message}}
+          <ng-container *ngFor="let validation of validation_messages.confirm_password">
+            <div class="error-message" *ngIf="new_signup_form.get('matching_passwords').get('confirm_password').hasError(validation.type) && (new_signup_form.get('matching_passwords').get('confirm_password').ditry || new_signup_form.get('matching_passwords').get('confirm_password').touched)">
+              {{ validation.message }}
             </div>
           </ng-container>
         </div>
       </div>
-
-      <!--
-          Want to use a Username instead of an Email? Here you go:
-          <ion-item>
-            <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-            <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-          </ion-item>
-          -->
-
-      <ion-item>
-        <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" formControlName="password" name="password" required></ion-input>
-      </ion-item>
 
       <div padding>
         <ion-button shape="round" expand="block" type="submit">{{ 'SIGNUP_SUBMIT' | translate }}</ion-button>

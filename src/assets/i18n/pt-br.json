@@ -6,6 +6,7 @@
     "CONFIRM_EMAIL": "Confirme seu email",
     "USERNAME": "Nome de Usuário",
     "PASSWORD": "Senha",
+    "CONFIRM_PASSWORD": "Confirme sua senha",
     "LOGIN": "Entrar",
     "FORGOT_PASSWORD": "Esqueceu sua senha?",
   
@@ -61,5 +62,7 @@
     "CARDS_TITLE": "Social",
   
     "SEARCH_TITLE": "Busca",
-    "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\""
+    "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
+
+    "EMAIL_MIN_LENGTH": "O Email deve conter no mínimo 20 caracteres."
   }

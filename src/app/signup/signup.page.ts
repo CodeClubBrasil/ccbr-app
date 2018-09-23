@@ -10,58 +10,90 @@ import { PasswordValidator } from '../validators/password.validator';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
+  new_signup_form: FormGroup;
+  matching_passwords_group: FormGroup;
+  emails_group: FormGroup;
+
+  validation_messages = {};
+
+  emailRequiredErrorString: string;
+  emailMinLength: string;
+  emailMaxLength: string;
+  emailValid: string;
+  emailvalidUserMail: string;
+
+  passwordRequiredErrorString: string;
+  passwordMinLength: string;
+  passwordValid: string;
+  passwordMismatch: string;
+
+  confirmPasswordRequired: string;
 
   constructor(
     public translateService: TranslateService,
-    public formBuilder: FormBuilder,
-  ) {
-    this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
-      this.signUpErrorString = value;
+    public formBuilder: FormBuilder) {
+    this.translateService.get('EMAIL_REQUIRED').subscribe((value) => {
+      this.emailRequiredErrorString = value;
+    });
+    this.translateService.get('EMAIL_MIN_LENGTH').subscribe((value) => {
+      this.emailMinLength = value;
+    });
+    this.translateService.get('EMAIL_MAX_LENGTH').subscribe((value) => {
+      this.emailMaxLength = value;
+    });
+    this.translateService.get('EMAIL_VALID').subscribe((value) => {
+      this.emailValid = value;
+    });
+    this.translateService.get('EMAIL_VALID_USER_MAIL').subscribe((value) => {
+      this.emailvalidUserMail = value;
+    });
+    this.translateService.get('PASSWORD_REQUIRED').subscribe((value) => {
+      this.passwordRequiredErrorString = value;
+    });
+    this.translateService.get('PASSWORD_MIN_LENGTH').subscribe((value) => {
+      this.passwordMinLength = value;
+    });
+    this.translateService.get('PASSWORD_VALID').subscribe((value) => {
+      this.passwordValid = value;
+    });
+    this.translateService.get('CONFIRM_PASSWORD_REQUIRED').subscribe((value) => {
+      this.confirmPasswordRequired = value;
+    });
+    this.translateService.get('PASSWORD_MISMATCH').subscribe((value) => {
+      this.passwordMismatch = value;
     });
   }
-  new_signup_form: FormGroup;
-  matching_passwords_group: FormGroup;
-  matching_emails_group: FormGroup;
-
-  private signUpErrorString: string;
-
-  validation_messages = {
-    'email': [
-      { type: 'minlength', message: 'Email must be at least 20 characters long.' },
-      { type: 'maxlength', message: 'Email cannot be more than 100 characters long.' },
-      { type: 'required', message: 'Email is required.' },
-      { type: 'pattern', message: 'Enter a valid email.' },
-      { type: 'validUseremail', message: 'Your email has already been taken.' }
-    ],
-    'confirm_email': [
-      { type: 'required', message: 'Confirm password is required' }
-    ],
-    'matching_emails': [
-      { type: 'areEqual', message: 'Email mismatch' }
-    ],
-    'password': [
-      { type: 'required', message: 'Password is required.' },
-      { type: 'minlength', message: 'Password must be at least 8 characters long.' },
-      { type: 'pattern', message: 'Your password must contain at least one uppercase, one lowercase, and one number.' }
-    ],
-    'confirm_password': [
-      { type: 'required', message: 'Confirm password is required' }
-    ],
-    'matching_passwords': [
-      { type: 'areEqual', message: 'Password mismatch' }
-    ],
-  };
 
   ngOnInit() {
-    this.matching_emails_group = new FormGroup({
+    this.validation_messages = {
+      'email': [
+        { type: 'minlength', message: this.emailMinLength },
+        { type: 'maxlength', message: this.emailMaxLength },
+        { type: 'required', message: this.emailRequiredErrorString },
+        { type: 'pattern', message: this.emailValid },
+        { type: 'validUseremail', message: this.emailvalidUserMail }
+      ],
+      'password': [
+        { type: 'required', message: this.passwordRequiredErrorString },
+        { type: 'minlength', message: this.passwordMinLength },
+        { type: 'pattern', message: this.passwordValid }
+      ],
+      'confirm_password': [
+        { type: 'required', message: this.confirmPasswordRequired }
+      ],
+      'matching_passwords': [
+        { type: 'areEqual', message: this.passwordMismatch }
+      ],
+    };
+
+    this.emails_group = new FormGroup({
       email: new FormControl('', Validators.compose([
         UseremailValidator.validUseremail,
         Validators.maxLength(100),
         Validators.minLength(20),
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-      confirm_email: new FormControl('', Validators.required)
+      ]))
     }, (formGroup: FormGroup) => {
       return UseremailValidator.areEqual(formGroup);
     });
@@ -81,13 +113,14 @@ export class SignupPage implements OnInit {
     this.new_signup_form = this.formBuilder.group({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      matching_emails: this.matching_emails_group,
+      emails: this.emails_group,
       matching_passwords: this.matching_passwords_group,
     });
   }
 
 
   signUp(args) {
+    console.log(args);
   }
 
 }

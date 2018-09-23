@@ -8,6 +8,7 @@
     "CONFIRM_EMAIL": "Confirm your email",
     "USERNAME": "Username",
     "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm your password",
     "LOGIN": "Sign in",
     "FORGOT_PASSWORD": "Forgot your password?",
   
@@ -62,5 +63,18 @@
     "CARDS_TITLE": "Social",
   
     "SEARCH_TITLE": "Search",
-    "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+    "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+
+    "EMAIL_MIN_LENGTH": "Email must be at least 20 characters long.",
+    "EMAIL_MAX_LENGTH": "Email cannot be more than 100 characters long.",
+    "EMAIL_VALID": "Enter a valid email.",
+    "EMAIL_VALID_USER_MAIL": "Your email has already been taken.",
+    "EMAIL_REQUIRED": "Email is required.",
+
+    "PASSWORD_REQUIRED": "Password is required.",
+    "PASSWORD_MIN_LENGTH": "Password must be at least 8 characters long.",
+    "PASSWORD_VALID": "Your password must contain at least one uppercase, one lowercase, and one number.",
+    "PASSWORD_MISMATCH": "Password mismatch.",
+
+    "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required."
   }
