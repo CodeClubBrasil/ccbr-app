@@ -34,6 +34,7 @@
     "cordova-plugin-ionic": "^5.0.5",
     "cordova-sqlite-storage": "^2.3.3",
     "core-js": "^2.5.3",
+    "ionic-angular": "3.9.2",
     "rxjs": "6.2.2",
     "zone.js": "^0.8.26"
   },
