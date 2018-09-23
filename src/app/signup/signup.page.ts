@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { UseremailValidator } from '../validators/useremail.validator';
 import { PasswordValidator } from '../validators/password.validator';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-signup',
@@ -30,8 +31,9 @@ export class SignupPage implements OnInit {
   confirmPasswordRequired: string;
 
   constructor(
-    public translateService: TranslateService,
-    public formBuilder: FormBuilder) {
+    private translateService: TranslateService,
+    private formBuilder: FormBuilder,
+    private storage: Storage) {
     this.translateService.get('EMAIL_REQUIRED').subscribe((value) => {
       this.emailRequiredErrorString = value;
     });
@@ -120,7 +122,7 @@ export class SignupPage implements OnInit {
 
 
   signUp(args) {
-    console.log(args);
+    this.storage.set('keys', args);
   }
 
 }
