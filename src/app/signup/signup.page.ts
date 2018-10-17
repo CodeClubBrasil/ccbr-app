@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { UseremailValidator } from '../validators/useremail.validator';
 import { PasswordValidator } from '../validators/password.validator';
-import { Storage } from '@ionic/storage';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,8 +18,6 @@ export class SignupPage implements OnInit {
   validation_messages = {};
 
   emailRequiredErrorString: string;
-  emailMinLength: string;
-  emailMaxLength: string;
   emailValid: string;
   emailvalidUserMail: string;
 
@@ -33,15 +31,9 @@ export class SignupPage implements OnInit {
   constructor(
     private translateService: TranslateService,
     private formBuilder: FormBuilder,
-    private storage: Storage) {
+    private userService: UserService) {
     this.translateService.get('EMAIL_REQUIRED').subscribe((value) => {
       this.emailRequiredErrorString = value;
-    });
-    this.translateService.get('EMAIL_MIN_LENGTH').subscribe((value) => {
-      this.emailMinLength = value;
-    });
-    this.translateService.get('EMAIL_MAX_LENGTH').subscribe((value) => {
-      this.emailMaxLength = value;
     });
     this.translateService.get('EMAIL_VALID').subscribe((value) => {
       this.emailValid = value;
@@ -69,8 +61,6 @@ export class SignupPage implements OnInit {
   ngOnInit() {
     this.validation_messages = {
       'email': [
-        { type: 'minlength', message: this.emailMinLength },
-        { type: 'maxlength', message: this.emailMaxLength },
         { type: 'required', message: this.emailRequiredErrorString },
         { type: 'pattern', message: this.emailValid },
         { type: 'validUseremail', message: this.emailvalidUserMail }
@@ -91,8 +81,6 @@ export class SignupPage implements OnInit {
     this.emails_group = new FormGroup({
       email: new FormControl('', Validators.compose([
         UseremailValidator.validUseremail,
-        Validators.maxLength(100),
-        Validators.minLength(20),
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ]))
@@ -121,8 +109,8 @@ export class SignupPage implements OnInit {
   }
 
 
-  signUp(args) {
-    this.storage.set('keys', args);
+  doSignup(args) {
+    this.userService.signup(args);
   }
 
 }

@@ -64,8 +64,6 @@
     "SEARCH_TITLE": "Busca",
     "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
 
-    "EMAIL_MIN_LENGTH": "O Email deve conter no mínimo 20 caracteres.",
-    "EMAIL_MAX_LENGTH": "O Email não pode ter mais do que 100 caracteres.",
     "EMAIL_VALID": "Entre um email válido.",
     "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
     "EMAIL_REQUIRED": "O campo email é necessário.",

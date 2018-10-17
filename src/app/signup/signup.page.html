@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding class="form-content">
-  <form class="form" [formGroup]="new_signup_form" (submit)="signUp(new_signup_form.value)">
+  <form class="form" [formGroup]="new_signup_form" (submit)="doSignup(new_signup_form.value)">
     <!-- <form [formGroup]="new_signup_form"> -->
     <ion-list>
       <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
@@ -29,8 +29,8 @@
 
       <div formGroupName="matching_passwords">
         <ion-item>
-          <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
-          <ion-input type="text" formControlName="password" required></ion-input>
+          <ion-label position="floating" color="primary">{{ 'PASSWORD' | translate }}</ion-label>
+          <ion-input type="password" formControlName="password" required></ion-input>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.password">
@@ -41,12 +41,12 @@
         </div>
 
         <ion-item>
-          <ion-label position="floating">{{ 'CONFIRM_PASSWORD' | translate }}</ion-label>
-          <ion-input type="text" formControlName="confirm_password" name="confirm_password"></ion-input>
+          <ion-label position="floating" color="primary">{{ 'CONFIRM_PASSWORD' | translate }}</ion-label>
+          <ion-input type="password" formControlName="confirm_password" name="confirm_password"></ion-input>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.confirm_password">
-            <div class="error-message" *ngIf="new_signup_form.get('matching_passwords').get('confirm_password').hasError(validation.type) && (new_signup_form.get('matching_passwords').get('confirm_password').ditry || new_signup_form.get('matching_passwords').get('confirm_password').touched)">
+            <div class="error-message" *ngIf="new_signup_form.get('matching_passwords').get('confirm_password').hasError(validation.type) && (new_signup_form.get('matching_passwords').get('confirm_password').dirty || new_signup_form.get('matching_passwords').get('confirm_password').touched)">
               {{ validation.message }}
             </div>
           </ng-container>

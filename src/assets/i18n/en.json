@@ -65,8 +65,6 @@
     "SEARCH_TITLE": "Search",
     "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
 
-    "EMAIL_MIN_LENGTH": "Email must be at least 20 characters long.",
-    "EMAIL_MAX_LENGTH": "Email cannot be more than 100 characters long.",
     "EMAIL_VALID": "Enter a valid email.",
     "EMAIL_VALID_USER_MAIL": "Your email has already been taken.",
     "EMAIL_REQUIRED": "Email is required.",
