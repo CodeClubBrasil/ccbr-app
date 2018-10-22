@@ -5,6 +5,8 @@ import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms'
 import { PasswordValidator } from '../validators/password.validator';
 import { UserService } from '../services/user/user.service';
 
+import { User } from '../models/user';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -13,6 +15,9 @@ import { UserService } from '../services/user/user.service';
 export class SignupPage implements OnInit {
   new_signup_form: FormGroup;
   matching_passwords_group: FormGroup;
+
+  model: User;
+  key: string;
 
   validation_messages = {};
 
@@ -131,7 +136,7 @@ export class SignupPage implements OnInit {
     if (!this.new_signup_form.valid) {
       this.presentAlert();
     } else {
-      this.userService.signup(args);
+      this.userService.insert(args);
     }
   }
 
