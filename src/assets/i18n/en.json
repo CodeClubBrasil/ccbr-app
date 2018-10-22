@@ -15,6 +15,10 @@
     "TAB1_TITLE": "Clubs",
     "TAB2_TITLE": "Search",
     "TAB3_TITLE": "Settings",
+
+    "WARNING_ALERT": "Warning",
+    "FORM_ERROR": "Form errors",
+    "FORM_ERROR_MESSAGE": "Please, verify the form data and submit it again!",
   
     "MAP_TITLE": "Map",
   
@@ -42,6 +46,7 @@
     "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
     "SIGNUP_BUTTON": "Sign up",
     "SIGNUP_SUBMIT": "Sign me up",
+    "OK_BUTTON": "Ok",
   
     "LIST_MASTER_TITLE": "Clubs",
   
@@ -71,7 +76,7 @@
 
     "PASSWORD_REQUIRED": "Password is required.",
     "PASSWORD_MIN_LENGTH": "Password must be at least 8 characters long.",
-    "PASSWORD_VALID": "Your password must contain at least one uppercase, one lowercase, and one number.",
+    "PASSWORD_VALID": "Your password must contain at least one special character, one uppercase, one lowercase, and one number.",
     "PASSWORD_MISMATCH": "Password mismatch.",
 
     "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required."

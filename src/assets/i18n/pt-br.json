@@ -13,6 +13,10 @@
     "TAB1_TITLE": "Itens",
     "TAB2_TITLE": "Busca",
     "TAB3_TITLE": "Configurações",
+
+    "WARNING_ALERT": "Aviso",
+    "FORM_ERROR": "Erros no formulário",
+    "FORM_ERROR_MESSAGE": "Por favor, Verifique as informações do formulário e submeta novamente!",
   
     "MAP_TITLE": "Mapa",
   
@@ -40,6 +44,7 @@
     "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
     "SIGNUP_BUTTON": "Cadastre-se",
     "SIGNUP_SUBMIT": "Cadastrar",
+    "OK_BUTTON": "Ok",
   
     "LIST_MASTER_TITLE": "Clubs",
   
@@ -70,7 +75,7 @@
 
     "PASSWORD_REQUIRED": "O campo senha é necessário.",
     "PASSWORD_MIN_LENGTH": "A senha deve ter no mínimo 8 caractres.",
-    "PASSWORD_VALID": "Sua senha deve conter no mínimo uma letra maíscula, uma mínuscula e um número.",
+    "PASSWORD_VALID": "Sua senha deve conter no mínimo um caracter especial, uma letra maíscula, uma mínuscula e um número.",
     "PASSWORD_MISMATCH": "A senha não confere.",
 
     "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."

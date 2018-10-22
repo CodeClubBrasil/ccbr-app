@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { UseremailValidator } from '../validators/useremail.validator';
 import { PasswordValidator } from '../validators/password.validator';
 import { UserService } from '../services/user/user.service';
 
@@ -13,7 +13,6 @@ import { UserService } from '../services/user/user.service';
 export class SignupPage implements OnInit {
   new_signup_form: FormGroup;
   matching_passwords_group: FormGroup;
-  emails_group: FormGroup;
 
   validation_messages = {};
 
@@ -28,10 +27,16 @@ export class SignupPage implements OnInit {
 
   confirmPasswordRequired: string;
 
+  warningAlert: string;
+  formError: string;
+  formErrorMessage: string;
+  okButton: string;
+
   constructor(
     private translateService: TranslateService,
     private formBuilder: FormBuilder,
-    private userService: UserService) {
+    private userService: UserService,
+    private alertController: AlertController) {
     this.translateService.get('EMAIL_REQUIRED').subscribe((value) => {
       this.emailRequiredErrorString = value;
     });
@@ -56,6 +61,29 @@ export class SignupPage implements OnInit {
     this.translateService.get('PASSWORD_MISMATCH').subscribe((value) => {
       this.passwordMismatch = value;
     });
+    this.translateService.get('WARNING_ALERT').subscribe((value) => {
+      this.warningAlert = value;
+    });
+    this.translateService.get('FORM_ERROR').subscribe((value) => {
+      this.formError = value;
+    });
+    this.translateService.get('FORM_ERROR_MESSAGE').subscribe((value) => {
+      this.formErrorMessage = value;
+    });
+    this.translateService.get('OK_BUTTON').subscribe((value) => {
+      this.okButton = value;
+    });
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: this.warningAlert,
+      subHeader: this.formError,
+      message: this.formErrorMessage,
+      buttons: [this.okButton]
+    });
+
+    await alert.present();
   }
 
   ngOnInit() {
@@ -78,21 +106,11 @@ export class SignupPage implements OnInit {
       ],
     };
 
-    this.emails_group = new FormGroup({
-      email: new FormControl('', Validators.compose([
-        UseremailValidator.validUseremail,
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ]))
-    }, (formGroup: FormGroup) => {
-      return UseremailValidator.areEqual(formGroup);
-    });
-
     this.matching_passwords_group = new FormGroup({
       password: new FormControl('', Validators.compose([
         Validators.minLength(8),
         Validators.required,
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])[a-zA-Z0-9-!@#$%^&*]+$')
       ])),
       confirm_password: new FormControl('', Validators.required)
     }, (formGroup: FormGroup) => {
@@ -101,16 +119,20 @@ export class SignupPage implements OnInit {
 
 
     this.new_signup_form = this.formBuilder.group({
-      email: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
-      emails: this.emails_group,
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+      ])),
       matching_passwords: this.matching_passwords_group,
     });
   }
 
-
   doSignup(args) {
-    this.userService.signup(args);
+    if (!this.new_signup_form.valid) {
+      this.presentAlert();
+    } else {
+      this.userService.signup(args);
+    }
   }
 
 }

@@ -13,18 +13,16 @@
     <ion-list>
       <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
 
-      <div formGroupName="emails">
-        <ion-item>
-          <ion-label position="floating">{{ 'EMAIL' | translate }}</ion-label>
-          <ion-input type="text" formControlName="email" required></ion-input>
-        </ion-item>
-        <div class="validation-errors">
-          <ng-container *ngFor="let validation of validation_messages.email">
-            <div class="error-message" *ngIf="new_signup_form.get('emails').get('email').hasError(validation.type) && (new_signup_form.get('emails').get('email').dirty || new_signup_form.get('emails').get('email').touched)">
-              {{ validation.message }}
-            </div>
-          </ng-container>
-        </div>
+      <ion-item>
+        <ion-label position="floating" color="primary">{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="text" formControlName="email" required></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="new_signup_form.get('email').hasError(validation.type) && (new_signup_form.get('email').dirty || new_signup_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
       </div>
 
       <div formGroupName="matching_passwords">
@@ -42,7 +40,7 @@
 
         <ion-item>
           <ion-label position="floating" color="primary">{{ 'CONFIRM_PASSWORD' | translate }}</ion-label>
-          <ion-input type="password" formControlName="confirm_password" name="confirm_password"></ion-input>
+          <ion-input type="password" formControlName="confirm_password"></ion-input>
         </ion-item>
         <div class="validation-errors">
           <ng-container *ngFor="let validation of validation_messages.confirm_password">
@@ -51,6 +49,14 @@
             </div>
           </ng-container>
         </div>
+      </div>
+      <!-- These validations are for the form group -->
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.matching_passwords">
+          <div class="error-message" *ngIf="new_signup_form.get('matching_passwords').hasError(validation.type) && (new_signup_form.get('matching_passwords').get('confirm_password').dirty || new_signup_form.get('matching_passwords').get('confirm_password').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
       </div>
 
       <div padding>
