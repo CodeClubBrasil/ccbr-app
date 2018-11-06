@@ -5,7 +5,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-// import { IonicStorageModule } from '@ionic/storage';
+
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -28,7 +28,6 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    // IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
