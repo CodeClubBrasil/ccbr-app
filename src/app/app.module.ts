@@ -5,9 +5,13 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { IonicStorageModule } from '@ionic/storage';
+// import { IonicStorageModule } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,7 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot(),
+    // IonicStorageModule.forRoot(),
     TranslateModule.forRoot(),
     HttpClientModule,
     TranslateModule.forRoot({
@@ -33,7 +37,16 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    AngularFireModule.initializeApp({
+      apiKey: 'API KEY',
+      authDomain: 'AUTH DOMAIN',
+      databaseURL: 'DATABASE URL',
+      projectId: 'PROJECT ID',
+      storageBucket: 'STORAGE BUCKET',
+      messagingSenderId: 'MESSAGING SENDER ID'
+    }),
+    AngularFireDatabaseModule
   ],
   providers: [
     StatusBar,
