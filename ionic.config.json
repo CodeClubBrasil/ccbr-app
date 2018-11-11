@@ -1,7 +1,8 @@
 {
   "name": "ccbr-app",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular",
   "pro_id": "c5909726"
