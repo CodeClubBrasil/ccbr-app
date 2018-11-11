@@ -13,14 +13,6 @@
         <ion-label position="floating">{{ 'EMAIL' | translate }}</ion-label>
         <ion-input type="text" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
-      
-      <!--
-        Want to use a Username instead of an Email? Here you go:
-        <ion-item>
-          <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-          <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-        </ion-item>
-        -->
 
       <ion-item>
         <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
@@ -28,12 +20,14 @@
       </ion-item>
 
       <div padding>
-        <ion-button shape="round" color="primary" fill="outline">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
+        <ion-button (click)="loginUser(doLogin())" shape="round" color="primary" fill="outline">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
       </div>
       <div padding>
-        <a>{{ 'FORGOT_PASSWORD' | translate }}</a>
         <div>
-          <a (click)="signUp()">{{ 'SIGNUP_BUTTON' | translate }}</a>
+          <ion-button expand="block" fill="clear" routerLink="/reset-password">{{ 'FORGOT_PASSWORD' | translate }}</ion-button>
+        </div>
+        <div>
+          <ion-button expand="block" fill="clear" routerLink="/signup">{{ 'SIGNUP_BUTTON' | translate }}</ion-button>
         </div>
       </div>
 
