@@ -3,7 +3,8 @@ import { AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Validators, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { PasswordValidator } from '../validators/password.validator';
-import { UserService } from '../services/user/user.service';
+import { AuthService } from '../services/authentication/auth.service';
+// import { UserService } from '../services/user/user.service';
 
 import { User } from '../models/user';
 
@@ -40,7 +41,7 @@ export class SignupPage implements OnInit {
   constructor(
     private translateService: TranslateService,
     private formBuilder: FormBuilder,
-    private userService: UserService,
+    private authService: AuthService,
     private alertController: AlertController) {
     this.translateService.get('EMAIL_REQUIRED').subscribe((value) => {
       this.emailRequiredErrorString = value;
@@ -133,11 +134,11 @@ export class SignupPage implements OnInit {
   }
 
   doSignup(args) {
-    if (!this.new_signup_form.valid) {
-      this.presentAlert();
-    } else {
-      this.userService.insert(args);
-    }
+    // if (!this.new_signup_form.valid) {
+    //   this.presentAlert();
+    // } else {
+    //   this.userService.insert(args);
+    // }
   }
 
 }
