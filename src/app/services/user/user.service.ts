@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage';
 import { User } from '../../models/user';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { User } from '../../models/user';
 })
 export class UserService {
 
-  constructor(private storage: Storage) { }
+  constructor() { }
 
   public insert(user: User) {
     const key = new Date().getTimezoneOffset.toString();
@@ -15,11 +15,11 @@ export class UserService {
   }
 
   private save(key: string, user: User) {
-    return this.storage.set(key, user);
+    // return this.storage.set(key, user);
   }
 
   public signup(value) {
-    this.storage.set('email', value.email);
-    this.storage.set('password', value.matching_passwords.password);
+    // this.storage.set('email', value.email);
+    // this.storage.set('password', value.matching_passwords.password);
   }
 }

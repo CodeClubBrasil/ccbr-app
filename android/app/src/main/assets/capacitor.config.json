@@ -1,0 +1,6 @@
+{
+  "appId": "com.codeclubbrasil.ccbrApp",
+  "appName": "ccbr-app",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
