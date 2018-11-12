@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 
 import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 
 import { Config, Platform } from '@ionic/angular';
 
@@ -26,6 +27,7 @@ export class AppComponent {
 
   initializeApp() {
     firebase.initializeApp(environment.firebase);
+    firebase.firestore().settings( { timestampsInSnapshots: true });
 
     SplashScreen.hide().catch(error => {
       console.error(error);
