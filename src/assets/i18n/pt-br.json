@@ -3,15 +3,20 @@
   
     "NAME": "Nome",
     "EMAIL": "Email",
+    "CONFIRM_EMAIL": "Confirme seu email",
     "USERNAME": "Nome de Usuário",
     "PASSWORD": "Senha",
+    "CONFIRM_PASSWORD": "Confirme sua senha",
     "LOGIN": "Entrar",
-    "SIGNUP": "Cadastre-se",
     "FORGOT_PASSWORD": "Esqueceu sua senha?",
   
     "TAB1_TITLE": "Itens",
     "TAB2_TITLE": "Busca",
     "TAB3_TITLE": "Configurações",
+
+    "WARNING_ALERT": "Aviso",
+    "FORM_ERROR": "Erros no formulário",
+    "FORM_ERROR_MESSAGE": "Por favor, Verifique as informações do formulário e submeta novamente!",
   
     "MAP_TITLE": "Mapa",
   
@@ -35,9 +40,11 @@
     "LOGIN_TITLE": "Entrar",
     "LOGIN_ERROR": "Não foi possível entrar na sua conta. Verifique seus dados e tente novamente.",
     "LOGIN_BUTTON": "Entrar",
-    "SIGNUP_TITLE": "Cadastre-se",
+    "SIGNUP_TITLE": "Registro",
     "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
     "SIGNUP_BUTTON": "Cadastre-se",
+    "SIGNUP_SUBMIT": "Cadastrar",
+    "OK_BUTTON": "Ok",
   
     "LIST_MASTER_TITLE": "Clubs",
   
@@ -60,5 +67,16 @@
     "CARDS_TITLE": "Social",
   
     "SEARCH_TITLE": "Busca",
-    "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\""
+    "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
+
+    "EMAIL_VALID": "Entre um email válido.",
+    "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
+    "EMAIL_REQUIRED": "O campo email é necessário.",
+
+    "PASSWORD_REQUIRED": "O campo senha é necessário.",
+    "PASSWORD_MIN_LENGTH": "A senha deve ter no mínimo 8 caractres.",
+    "PASSWORD_VALID": "Sua senha deve conter no mínimo um caracter especial, uma letra maíscula, uma mínuscula e um número.",
+    "PASSWORD_MISMATCH": "A senha não confere.",
+
+    "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."
   }

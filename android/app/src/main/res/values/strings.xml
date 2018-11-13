@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ccbr-app</string>
+    <string name="title_activity_main">ccbr-app</string>
+    <string name="package_name">com.codeclubbrasil.ccbrApp</string>
+    <string name="fileprovider_authority">com.codeclubbrasil.ccbrApp.fileprovider</string>
+    <string name="custom_url_scheme">com.codeclubbrasil.ccbrApp</string>
+</resources>

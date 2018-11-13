@@ -38,4 +38,5 @@ UserInterfaceState.xcuserstate
 **/environment.dev.ts
 **/environment.ts
 !**/environment.model.ts
+**/environment.prod.ts
 
