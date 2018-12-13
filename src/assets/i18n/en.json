@@ -1,7 +1,8 @@
 {
     "BACK_BUTTON_TEXT": "Back",
 
-    "HOME_TITLE": "HOME",
+    "HOME_TITLE": "Home",
+    "FORGOT_PASSWORD_TITLE": "Forgot my password",
   
     "NAME": "Name",
     "EMAIL": "Email",
@@ -11,6 +12,7 @@
     "CONFIRM_PASSWORD": "Confirm your password",
     "LOGIN": "Sign in",
     "FORGOT_PASSWORD": "Forgot your password?",
+    "YOUR_REGISTERED_EMAIL": "Your registered email",
   
     "TAB1_TITLE": "Clubs",
     "TAB2_TITLE": "Search",
@@ -47,6 +49,8 @@
     "SIGNUP_BUTTON": "Sign up",
     "SIGNUP_SUBMIT": "Sign me up",
     "OK_BUTTON": "Ok",
+    "FORGOT_PASSWORD_SUBMIT": "SEND ME A NEW PASSWORD",
+    "FORGOT_PASSWORD_TEXT": "Type the registered email to receive a new password in your inbox",
   
     "LIST_MASTER_TITLE": "Clubs",
   
