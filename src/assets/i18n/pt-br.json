@@ -1,7 +1,7 @@
 {
     "BACK_BUTTON_TEXT": "Voltar",
 
-    "HOME_TITLE": "HOME",
+    "HOME_TITLE": "Home",
     "FORGOT_PASSWORD_TITLE": "Esqueci minha senha",
   
     "NAME": "Nome",
@@ -12,6 +12,7 @@
     "CONFIRM_PASSWORD": "Confirme sua senha",
     "LOGIN": "Entrar",
     "FORGOT_PASSWORD": "Esqueceu sua senha?",
+    "YOUR_REGISTERED_EMAIL": "Seu email cadastrado",
   
     "TAB1_TITLE": "Itens",
     "TAB2_TITLE": "Busca",
@@ -48,6 +49,7 @@
     "SIGNUP_BUTTON": "Cadastre-se",
     "SIGNUP_SUBMIT": "Cadastrar",
     "OK_BUTTON": "Ok",
+    "FORGOT_PASSWORD_SUBMIT": "ENVIE-ME UMA NOVA SENHA",
   
     "LIST_MASTER_TITLE": "Clubs",
   
