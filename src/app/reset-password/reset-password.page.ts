@@ -114,6 +114,8 @@ export class ResetPasswordPage implements OnInit {
             ],
           });
           await alert.present();
+          this.router.navigateByUrl('/');
+
         },
         async error => {
           const errorAlert = await this.alertController.create({
