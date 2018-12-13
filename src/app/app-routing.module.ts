@@ -5,7 +5,8 @@ import { AuthGuard } from './services/authentication/auth.guard';
 
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' }
+  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'reset-password', loadChildren: './reset-password/reset-password.module#ResetPasswordPageModule' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,5 +1,8 @@
 {
     "BACK_BUTTON_TEXT": "Voltar",
+
+    "HOME_TITLE": "HOME",
+    "FORGOT_PASSWORD_TITLE": "Esqueci minha senha",
   
     "NAME": "Nome",
     "EMAIL": "Email",
