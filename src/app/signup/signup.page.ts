@@ -146,7 +146,7 @@ export class SignupPage implements OnInit {
     });
   }
 
-  async doSignup(args): Promise<void> {
+  async doSignup(): Promise<void> {
     if (!this.new_signup_form.valid) {
       await this.presentAlert();
     } else {

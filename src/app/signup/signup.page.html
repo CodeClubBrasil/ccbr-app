@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content padding class="form-content">
-  <form class="form" [formGroup]="new_signup_form" (submit)="doSignup(new_signup_form.value)">
+  <form class="form" [formGroup]="new_signup_form" (submit)="doSignup()">
     <!-- <form [formGroup]="new_signup_form"> -->
     <ion-list>
       <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
@@ -61,7 +61,6 @@
 
       <div padding>
         <ion-button shape="round" expand="block" type="submit">{{ 'SIGNUP_SUBMIT' | translate }}</ion-button>
-        <!-- <ion-button shape="round" expand="block" color="primary" fill="outline" (click)=signUp(new_signup_form.value)>{{ 'SIGNUP_SUBMIT' | translate }}</ion-button> -->
       </div>
 
     </ion-list>
