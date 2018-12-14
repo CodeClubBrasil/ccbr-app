@@ -5,26 +5,45 @@
 </ion-header>
 
 <ion-content padding>
-  <form (submit)="doLogin()">
+  <form class="form" [formGroup]="loginForm" (submit)="doLogin()">
     <ion-list>
       <div style='text-align: center'>
         <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
       </div>
-      <div style='text-align: center; color: green'><h2>BRASIL</h2></div>
+      <div style='text-align: center; color: green'>
+        <h2>BRASIL</h2>
+      </div>
 
       <ion-item>
-        <ion-label position="floating">{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-label position="floating" color="primary">{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="text" formControlName="email" required></ion-input>
       </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.email">
+          <div class="error-message" *ngIf="loginForm.get('email').hasError(validation.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
 
-      <ion-item>
-        <ion-label position="floating">{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input required type="password" [(ngModel)]="account.password" name="password"></ion-input>
-      </ion-item>
+      <div formGroupName="matchingPasswords">
+          <ion-item>
+            <ion-label position="floating" color="primary">{{ 'PASSWORD' | translate }}</ion-label>
+            <ion-input type="password" formControlName="password" required></ion-input>
+          </ion-item>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validationMessages.password">
+              <div class="error-message" *ngIf="loginForm.get('matchingPasswords').get('password').hasError(validation.type) && (loginForm.get('matchingPasswords').get('password').dirty || loginForm.get('matchingPasswords').get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
 
       <div padding>
-        <ion-button (click)="loginUser(doLogin())" shape="round" color="primary" fill="outline">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
+        <ion-button shape="round" expand="block" type="submit">{{ 'LOGIN_BUTTON' | translate }}</ion-button>
       </div>
+
       <div padding>
         <div>
           <ion-button expand="block" fill="clear" routerLink="/reset-password">{{ 'FORGOT_PASSWORD' | translate }}</ion-button>
