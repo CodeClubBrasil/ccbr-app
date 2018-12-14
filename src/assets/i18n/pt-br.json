@@ -1,87 +1,89 @@
 {
-    "BACK_BUTTON_TEXT": "Voltar",
+  "CODE_CLUB_COUNTRY": "BRASIL",
+  
+  "BACK_BUTTON_TEXT": "Voltar",
 
-    "HOME_TITLE": "Home",
-    "FORGOT_PASSWORD_TITLE": "Esqueci minha senha",
-  
-    "NAME": "Nome",
-    "EMAIL": "Email",
-    "CONFIRM_EMAIL": "Confirme seu email",
-    "USERNAME": "Nome de Usuário",
-    "PASSWORD": "Senha",
-    "CONFIRM_PASSWORD": "Confirme sua senha",
-    "LOGIN": "Entrar",
-    "FORGOT_PASSWORD": "Esqueceu sua senha?",
-    "YOUR_REGISTERED_EMAIL": "Seu email cadastrado",
-  
-    "TAB1_TITLE": "Itens",
-    "TAB2_TITLE": "Busca",
-    "TAB3_TITLE": "Configurações",
+  "HOME_TITLE": "Home",
+  "FORGOT_PASSWORD_TITLE": "Esqueci minha senha",
 
-    "WARNING_ALERT": "Aviso",
-    "FORM_ERROR": "Erros no formulário",
-    "FORM_ERROR_MESSAGE": "Por favor, Verifique as informações do formulário e submeta novamente!",
-  
-    "MAP_TITLE": "Mapa",
-  
-    "WELCOME_SKIP_BUTTON": "Pular",
-    "WELCOME_CONTINUE_BUTTON": "Continuar",
-  
-    "WELCOME_INTRO": "Bem vindo a aplicação do Code Club",
-  
-    "SETTINGS_TITLE": "Configurações",
-    "SETTINGS_OPTION1": "Opção 1",
-    "SETTINGS_OPTION2": "Opção 2",
-    "SETTINGS_OPTION3": "Opção 3",
-    "SETTINGS_OPTION4": "Opção 4",
-  
-    "SETTINGS_PROFILE_BUTTON": "Editar Perfil",
-  
-    "SETTINGS_PAGE_PROFILE": "Editar Perfil",
-  
-    "WELCOME_TITLE": "Bem-vindo",
-  
-    "LOGIN_TITLE": "Entrar",
-    "LOGIN_ERROR": "Não foi possível entrar na sua conta. Verifique seus dados e tente novamente.",
-    "LOGIN_BUTTON": "Entrar",
-    "SIGNUP_TITLE": "Registro",
-    "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
-    "SIGNUP_BUTTON": "Cadastre-se",
-    "SIGNUP_SUBMIT": "Cadastrar",
-    "OK_BUTTON": "Ok",
-    "FORGOT_PASSWORD_SUBMIT": "ENVIE-ME UMA NOVA SENHA",
-  
-    "LIST_MASTER_TITLE": "Clubs",
-  
-    "LOOKING_FOR_VOLUNTEERS": "Procurando por voluntários",
-    "RUN_WITHOUT_VOLUNTEER" : "Funciona sem voluntários",
-    "HAPPY_TO_BE_CONTACTED" : "Gostaria de ser contactado",
-  
-    "ADDRESS": "Endereço", 
-  
-    "ITEM_CREATE_TITLE": "Novo Item",
-    "ITEM_CREATE_CHOOSE_IMAGE": "Adicionar Imagem",
-  
-    "ITEM_NAME_PLACEHOLDER": "Nome",
-    "ITEM_ABOUT_PLACEHOLDER": "Sobre",
-  
-    "DONE_BUTTON": "Pronto",
-    "CANCEL_BUTTON": "Cancelar",
-    "DELETE_BUTTON": "Apagar",
-  
-    "CARDS_TITLE": "Social",
-  
-    "SEARCH_TITLE": "Busca",
-    "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
+  "NAME": "Nome",
+  "EMAIL": "Email",
+  "CONFIRM_EMAIL": "Confirme seu email",
+  "USERNAME": "Nome de Usuário",
+  "PASSWORD": "Senha",
+  "CONFIRM_PASSWORD": "Confirme sua senha",
+  "LOGIN": "Entrar",
+  "FORGOT_PASSWORD": "Esqueceu sua senha?",
+  "YOUR_REGISTERED_EMAIL": "Seu email cadastrado",
 
-    "EMAIL_VALID": "Entre um email válido.",
-    "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
-    "EMAIL_REQUIRED": "O campo email é necessário.",
+  "TAB1_TITLE": "Itens",
+  "TAB2_TITLE": "Busca",
+  "TAB3_TITLE": "Configurações",
 
-    "PASSWORD_REQUIRED": "O campo senha é necessário.",
-    "PASSWORD_MIN_LENGTH": "A senha deve ter no mínimo 8 caractres.",
-    "PASSWORD_VALID": "Sua senha deve conter no mínimo um caracter especial, uma letra maíscula, uma mínuscula e um número.",
-    "PASSWORD_MISMATCH": "A senha não confere.",
+  "WARNING_ALERT": "Aviso",
+  "FORM_ERROR": "Erros no formulário",
+  "FORM_ERROR_MESSAGE": "Por favor, Verifique as informações do formulário e submeta novamente!",
 
-    "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."
+  "MAP_TITLE": "Mapa",
+
+  "WELCOME_SKIP_BUTTON": "Pular",
+  "WELCOME_CONTINUE_BUTTON": "Continuar",
+
+  "WELCOME_INTRO": "Bem vindo a aplicação do Code Club",
+
+  "SETTINGS_TITLE": "Configurações",
+  "SETTINGS_OPTION1": "Opção 1",
+  "SETTINGS_OPTION2": "Opção 2",
+  "SETTINGS_OPTION3": "Opção 3",
+  "SETTINGS_OPTION4": "Opção 4",
+
+  "SETTINGS_PROFILE_BUTTON": "Editar Perfil",
+
+  "SETTINGS_PAGE_PROFILE": "Editar Perfil",
+
+  "WELCOME_TITLE": "Bem-vindo",
+
+  "LOGIN_TITLE": "Entrar",
+  "LOGIN_ERROR": "Não foi possível entrar na sua conta. Verifique seus dados e tente novamente.",
+  "LOGIN_BUTTON": "Entrar",
+  "SIGNUP_TITLE": "Registro",
+  "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
+  "SIGNUP_BUTTON": "Cadastre-se",
+  "SIGNUP_SUBMIT": "Cadastrar",
+  "OK_BUTTON": "Ok",
+  "FORGOT_PASSWORD_SUBMIT": "ENVIE-ME UMA NOVA SENHA",
+
+  "LIST_MASTER_TITLE": "Clubs",
+
+  "LOOKING_FOR_VOLUNTEERS": "Procurando por voluntários",
+  "RUN_WITHOUT_VOLUNTEER" : "Funciona sem voluntários",
+  "HAPPY_TO_BE_CONTACTED" : "Gostaria de ser contactado",
+
+  "ADDRESS": "Endereço", 
+
+  "ITEM_CREATE_TITLE": "Novo Item",
+  "ITEM_CREATE_CHOOSE_IMAGE": "Adicionar Imagem",
+
+  "ITEM_NAME_PLACEHOLDER": "Nome",
+  "ITEM_ABOUT_PLACEHOLDER": "Sobre",
+
+  "DONE_BUTTON": "Pronto",
+  "CANCEL_BUTTON": "Cancelar",
+  "DELETE_BUTTON": "Apagar",
+
+  "CARDS_TITLE": "Social",
+
+  "SEARCH_TITLE": "Busca",
+  "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
+
+  "EMAIL_VALID": "Entre um email válido.",
+  "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
+  "EMAIL_REQUIRED": "O campo email é necessário.",
+
+  "PASSWORD_REQUIRED": "O campo senha é necessário.",
+  "PASSWORD_MIN_LENGTH": "A senha deve ter no mínimo 8 caractres.",
+  "PASSWORD_VALID": "Sua senha deve conter no mínimo um caracter especial, uma letra maíscula, uma mínuscula e um número.",
+  "PASSWORD_MISMATCH": "A senha não confere.",
+
+  "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."
   }

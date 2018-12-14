@@ -9,12 +9,13 @@
 
 <ion-content padding class="form-content">
   <form class="form" [formGroup]="new_signup_form" (submit)="doSignup()">
-    <!-- <form [formGroup]="new_signup_form"> -->
     <ion-list>
       <div style='text-align: center'>
-          <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
+        <img src="assets/img/code_club_logo.jpg" alt="Code Club logo">
       </div>
-      <div style='text-align: center; color: green'><h2>BRASIL</h2></div>
+      <div style='text-align: center; color: green'>
+        <h2>{{ 'CODE_CLUB_COUNTRY' | translate }}</h2>
+      </div>
 
       <ion-item>
         <ion-label position="floating" color="primary">{{ 'EMAIL' | translate }}</ion-label>
