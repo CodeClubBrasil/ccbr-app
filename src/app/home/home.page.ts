@@ -129,8 +129,8 @@ export class HomePage implements OnInit {
       this.authService.loginUser(email, password).then(
         () => {
           this.loading.dismiss().then(() => {
-            alert('USER LOGGED IN');
-            // this.router.navigateByUrl('home');
+            // alert('USER LOGGED IN');
+            this.router.navigateByUrl('first-access');
           });
         },
         error => {
