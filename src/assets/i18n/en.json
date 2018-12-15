@@ -53,6 +53,7 @@
   "OK_BUTTON": "Ok",
   "FORGOT_PASSWORD_SUBMIT": "SEND ME A NEW PASSWORD",
   "FORGOT_PASSWORD_TEXT": "Type the registered email to receive a new password in your inbox",
+  "REGISTER_CLASS": "ADD NEW CLASS",
 
   "LIST_MASTER_TITLE": "Clubs",
 
@@ -85,5 +86,8 @@
   "PASSWORD_VALID": "Your password must contain at least one special character, one uppercase, one lowercase, and one number.",
   "PASSWORD_MISMATCH": "Password mismatch.",
 
-  "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required."
+  "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required.",
+
+  "HELLO": "Hello",
+  "WELCOME_TEXT": "Welcome to the Code Club App,a tool to be used for Club Leader to manage your club sessions and track your student’s evolution. You can begin adding a new class tapping on the button bellow:"
   }
