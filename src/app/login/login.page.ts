@@ -12,10 +12,10 @@ import { AuthService } from '../services/authentication/auth.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  templateUrl: 'login.page.html',
+  styleUrls: ['login.page.scss']
 })
-export class HomePage implements OnInit {
+export class LoginPage implements OnInit {
   private loginForm: FormGroup;
   private matchingPasswordsGroup: FormGroup;
 
