@@ -14,20 +14,20 @@ export class AuthService {
     return firebase.auth().signInWithEmailAndPassword(email, password);
   }
 
-  signupUser(email: string, password: string): Promise<any> {
-    return firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(newUserCredential => {
-        firebase
-          .firestore()
-          .doc(`/userProfile/${newUserCredential.user.uid}`)
-          .set({ email });
-      })
-      .catch(error => {
-        console.error(error);
-        throw new Error(error);
-      });
+  async signupUser(email: string, password: string): Promise<any> {
+    try {
+      const newUserCredential = await firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password);
+      firebase
+        .firestore()
+        .doc(`/userProfile/${newUserCredential.user.uid}`)
+        .set({ email });
+    }
+    catch (error) {
+      console.error(error);
+      throw new Error(error);
+    }
   }
 
   resetPassword(email: string): Promise<void> {
