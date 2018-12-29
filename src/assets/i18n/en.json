@@ -89,5 +89,10 @@
   "CONFIRM_PASSWORD_REQUIRED": "Confirm password is required.",
 
   "HELLO": "Hello",
-  "WELCOME_TEXT": "Welcome to the Code Club App,a tool to be used for Club Leader to manage your club sessions and track your student’s evolution. You can begin adding a new class tapping on the button bellow:"
+  "WELCOME_TEXT": "Welcome to the Code Club App,a tool to be used for Club Leader to manage your club sessions and track your student’s evolution. You can begin adding a new class tapping on the button bellow:",
+
+  "MY_CODE_CLUB" : "My Code Club",
+  "MANAGE_CLUB_STUDENT": "Manager your classes and students",
+  "MY_PROFILE": "My Profile",
+  "MANAGE_YOUR_DATA": "Keep your data updated"
   }
