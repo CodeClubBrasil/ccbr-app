@@ -14,10 +14,9 @@ export class FirstAccessPage implements OnInit {
   }
 
   logOut(): void {
-    this.authService.logoutUser().then( () => {
+    this.authService.logoutUser().then(() => {
       this.router.navigateByUrl('/');
     }
-
     )
   }
 
