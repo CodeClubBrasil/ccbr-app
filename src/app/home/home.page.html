@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar style='background:#05a344'>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-img style="width:50px; height:50px" src="assets/img/code_club_logo_header.png" alt="Code Club logo"></ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button href="/home">
+        <ion-icon slot="icon-only" name="home" style="color:limegreen"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="icon-only" name="log-out" style="color:limegreen"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img src="assets/img/classes.png" />
+    <ion-card-content style='background-color: #488aff' >
+      <ion-card-header>
+        <ion-card-title style='color: white'>{{ 'MY_CODE_CLUB'| translate }}</ion-card-title>
+        <ion-card-subtitle style='color: white'>{{ 'MANAGE_CLUB_STUDENT' | translate }}</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-content style='background-color: #05a344'>
+        <ion-card-header>
+          <ion-card-title style='color: white'>{{ 'MY_PROFILE'| translate }}</ion-card-title>
+          <ion-card-subtitle style='color: white'>{{ 'MANAGE_YOUR_DATA' | translate }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
