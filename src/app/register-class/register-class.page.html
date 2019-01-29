@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register-class</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h1 text-center margin-bottom>New Class</h1>
+
+    <ion-content>
+      <ion-list>
+        <!-- <ion-item *ngFor="let club of clubs" routerLink="/detail/{{cr.id}}"> -->
+        <ion-item>
+          <ion-label>Code Club</ion-label>
+          <ion-select placeholder='Select one Club'>
+            <ion-select-option *ngFor="let club of clubs" value={{club.id}}>{{club.name}}</ion-select-option> 
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <!--
+        <div *ngIf="selectedItem" padding>
+          You navigated here from <b>{{selectedItem.title }}</b>
+        </div>
+      -->
+    </ion-content>
+</ion-content>
