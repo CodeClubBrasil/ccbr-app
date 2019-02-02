@@ -28,6 +28,7 @@
     "@ionic/lab": "^1.0.6",
     "@ionic/ng-toolkit": "^1.0.0",
     "@ionic/pro": "2.0.3",
+    "@ionic/pwa-elements": "^1.0.1",
     "@ionic/schematics-angular": "^1.0.0",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
