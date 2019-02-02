@@ -1,5 +1,7 @@
 {
   "CODE_CLUB_COUNTRY": "BRASIL",
+  "CODE_CLUB": "Code Club",
+  "SELECT_CLUB": "Select one club",
   
   "BACK_BUTTON_TEXT": "Voltar",
 
@@ -86,5 +88,7 @@
   "PASSWORD_VALID": "Sua senha deve conter no mínimo um caracter especial, uma letra maíscula, uma mínuscula e um número.",
   "PASSWORD_MISMATCH": "A senha não confere.",
 
-  "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."
+  "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário.",
+
+  "CLASS_NAME_INPUT": "Nome da turma"
   }

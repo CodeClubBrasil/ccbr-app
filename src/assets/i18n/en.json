@@ -1,6 +1,11 @@
 {
   "CODE_CLUB_COUNTRY": "BRASIL",
 
+  "NEW_CLASS": "Turma Nova",
+
+  "CODE_CLUB": "Code Club",
+  "SELECT_CLUB": "Selecione um clube",
+
   "BACK_BUTTON_TEXT": "Back",
 
   "HOME_TITLE": "Home",
@@ -94,5 +99,7 @@
   "MY_CODE_CLUB" : "My Code Club",
   "MANAGE_CLUB_STUDENT": "Manager your classes and students",
   "MY_PROFILE": "My Profile",
-  "MANAGE_YOUR_DATA": "Keep your data updated"
+  "MANAGE_YOUR_DATA": "Keep your data updated",
+
+  "CLASS_NAME_INPUT": "Class name"
   }
