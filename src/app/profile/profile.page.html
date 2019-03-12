@@ -1,0 +1,68 @@
+<ion-header no-border>
+  <ion-toolbar style='background:#05a344'>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-img style="width:50px; height:50px" src="assets/img/code_club_logo_header.png" alt="Code Club logo">
+        </ion-img>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button href="/home">
+        <ion-icon slot="icon-only" name="home" style="color:limegreen"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">
+        <ion-icon slot="icon-only" name="log-out" style="color:limegreen"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      {{ 'MY_PROFILE' | translate }}
+    </ion-list-header>
+    <ion-item (click)="updateName()">
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="text-left" size="5"> {{ 'NAME' | translate }} </ion-col>
+            <ion-col class="text-center" size="7" *ngIf="userProfile?.firstName || userProfile?.lastName"> {{userProfile?.firstName}} {{userProfile?.lastName}} </ion-col>
+            <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.firstName">
+              <span>{{ 'TAP_EDIT' | translate }}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+
+    <ion-item (click)="updateEmail()">
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="text-left" size="5"> {{ 'EMAIL' | translate}}</ion-col>
+            <ion-col class="text-center" size="7" *ngIf="userProfile?.email"> {{userProfile?.email}} </ion-col>
+            <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
+              <span>{{ 'TAP_EDIT' | translate }}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="updatePassword()">
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="text-left" size="5">{{ 'PASSWORD' | translate }}</ion-col>
+            <ion-col class="text-center" size="7" class="placeholder-profile">
+              <span>{{ 'TAP_EDIT' | translate }}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

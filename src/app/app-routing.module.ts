@@ -15,10 +15,14 @@ const routes: Routes = [
   { path: 'home',
     loadChildren: './home/home.module#HomePageModule',
     canActivate: [AuthGuard] },
-  { path: 'register-class', 
+  { path: 'register-class',
     loadChildren: './register-class/register-class.module#RegisterClassPageModule',
     canActivate: [AuthGuard]
-   }
+   },
+  { path: 'profile',
+    loadChildren: './profile/profile.module#ProfilePageModule',
+    canActivate: [AuthGuard]
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

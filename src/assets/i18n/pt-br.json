@@ -20,6 +20,8 @@
   "TAB2_TITLE": "Busca",
   "TAB3_TITLE": "Configurações",
 
+  "TAP_EDIT": "Tap to edit",
+
   "WARNING_ALERT": "Aviso",
   "FORM_ERROR": "Erros no formulário",
   "FORM_ERROR_MESSAGE": "Por favor, Verifique as informações do formulário e submeta novamente!",
@@ -86,5 +88,6 @@
   "PASSWORD_VALID": "Sua senha deve conter no mínimo um caracter especial, uma letra maíscula, uma mínuscula e um número.",
   "PASSWORD_MISMATCH": "A senha não confere.",
 
-  "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário."
+  "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário.",
+  "MANAGE_YOUR_DATA": "Keep your data updated"
   }
