@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/user/profile/profile.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { AuthService } from '../services/authentication/auth.service';
 import { Router } from '@angular/router';
 
@@ -16,7 +16,8 @@ export class ProfilePage implements OnInit {
     private profileService: ProfileService,
     private alertCtrl: AlertController,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -56,7 +57,10 @@ export class ProfilePage implements OnInit {
         },
       ],
     });
+    alert.onDidDismiss(() => {
+    });
     await alert.present();
+
   }
 
   async updateEmail(): Promise<void> {
@@ -79,6 +83,27 @@ export class ProfilePage implements OnInit {
     });
     await alert.present();
   }
+
+  async updateTelephone(): Promise<void> {
+    const alert = await this.alertCtrl.create({
+      subHeader: 'Your telephone', inputs: [
+        {
+          type: 'text',
+          name: 'telephone', placeholder: 'Your telephone',
+          value: this.userProfile.telephone,
+        },
+      ], buttons: [
+        { text: 'Cancel' }, {
+          text: 'Save',
+          handler: data => {
+            this.profileService.updateTelephone(data.telephone);
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
+
   async updatePassword(): Promise<void> {
     const alert = await this.alertCtrl.create({
       inputs: [
