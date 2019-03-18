@@ -3,9 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './services/authentication/auth.guard';
 
 const routes: Routes = [
-  { path: '', loadChildren: './login/login.module#LoginPageModule' },
+  { path: '',
+    loadChildren: './login/login.module#LoginPageModule'
+  },
+  { path: 'login',
+    loadChildren: './login/login.module#LoginPageModule'
+  },
   // { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
+  { path: 'signup',
+    loadChildren: './signup/signup.module#SignupPageModule'
+  },
   { path: 'reset-password',
     loadChildren: './reset-password/reset-password.module#ResetPasswordPageModule',
     canActivate: [AuthGuard] },
