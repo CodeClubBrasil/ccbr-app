@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { CodeClubApiService } from '../services/api/code-club-api.service' 
+import { CodeClubApiService } from '../services/api/code-club-api.service';
 
 @Component({
   selector: 'app-register-class',
@@ -14,28 +14,28 @@ export class RegisterClassPage implements OnInit {
     public loadingController: LoadingController
   ) { }
 
-  clubs: any
+  clubs: any;
 
   ngOnInit() {
-    this.getClubs()
-    
+    this.getClubs();
+
   }
 
   async getClubs() {
     const loading = await this.loadingController.create({
       content: 'Loading'
-    })
-    await loading.present()
+    });
+    await loading.present();
     await this.codeClubApiService.getClubs()
     .subscribe(res => {
-      console.log(res)
-      this.clubs = res
-      loading.dismiss()
+      console.log(res);
+      this.clubs = res;
+      loading.dismiss();
     }, err => {
-      console.log(err)
-      loading.dismiss()
+      console.log(err);
+      loading.dismiss();
     }
-    )
+    );
   }
 
 }

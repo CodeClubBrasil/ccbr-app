@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/user/profile/profile.service';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { AuthService } from '../services/authentication/auth.service';
 import { Router } from '@angular/router';
 
@@ -16,28 +16,23 @@ export class ProfilePage implements OnInit {
     private profileService: ProfileService,
     private alertCtrl: AlertController,
     private authService: AuthService,
-    private router: Router,
-    private navCtrl: NavController
+    private router: Router
   ) { }
 
-  ngOnInit() {
-    this.profileService
-      .getUserProfile()
-      .get()
-      .then(userProfileSnapshot => {
-        this.userProfile = userProfileSnapshot.data();
-      });
+  async ngOnInit() {
+    const userProfileSnapshot = await this.profileService.getUserProfile().get();
+    this.userProfile = userProfileSnapshot.data();
   }
 
-  logOut(): void {
-    this.authService.logoutUser().then(() => {
-      this.router.navigateByUrl('login');
-    });
+  async logOut(): Promise<void> {
+    await this.authService.logoutUser();
+    this.router.navigateByUrl('');
   }
 
-  async updateName(): Promise<void> {
+  async updateName() {
     const alert = await this.alertCtrl.create({
-      subHeader: 'Your first name & last name', inputs: [
+      subHeader: 'Your first name & last name',
+      inputs: [
         {
           type: 'text',
           name: 'firstName', placeholder: 'Your first name',
@@ -48,35 +43,38 @@ export class ProfilePage implements OnInit {
           name: 'lastName', placeholder: 'Your last name',
           value: this.userProfile.lastName,
         },
-      ], buttons: [
-        { text: 'Cancel' }, {
+      ],
+      buttons: [
+        { text: 'Cancel' },
+        {
           text: 'Save',
-          handler: data => {
-            this.profileService.updateName(data.firstName, data.lastName);
+          handler: async data => {
+          await this.profileService.updateName(data.firstName, data.lastName);
+          this.ngOnInit();
           },
         },
       ],
-    });
-    alert.onDidDismiss(() => {
     });
     await alert.present();
 
   }
 
-  async updateEmail(): Promise<void> {
+  async updateEmail() {
     const alert = await this.alertCtrl.create({
       inputs: [
         { type: 'text', name: 'newEmail', placeholder: 'Your new email' },
         { name: 'password', placeholder: 'Your password', type: 'password' }, ],
       buttons: [
         { text: 'Cancel' }, {
-          text: 'Save', handler: data => {
-            this.profileService.updateEmail(data.newEmail, data.password).then(() => {
+          text: 'Save',
+          handler: async data => {
+            try {
+              await this.profileService.updateEmail(data.newEmail, data.password);
               console.log('Email Changed Successfully');
-            })
-              .catch(error => {
-                console.log('ERROR: ' + error.message);
-              });
+            } catch (error) {
+              console.log('ERROR: ' + error.message);
+            }
+            this.ngOnInit();
           },
         },
       ],
@@ -84,19 +82,20 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
-  async updateTelephone(): Promise<void> {
+  async updateTelephone() {
     const alert = await this.alertCtrl.create({
       subHeader: 'Your telephone', inputs: [
         {
-          type: 'text',
+          type: 'tel',
           name: 'telephone', placeholder: 'Your telephone',
           value: this.userProfile.telephone,
         },
       ], buttons: [
         { text: 'Cancel' }, {
           text: 'Save',
-          handler: data => {
-            this.profileService.updateTelephone(data.telephone);
+          handler: async data => {
+            await this.profileService.updateTelephone(data.telephone);
+            this.ngOnInit();
           },
         },
       ],
@@ -104,7 +103,7 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
-  async updatePassword(): Promise<void> {
+  async updatePassword() {
     const alert = await this.alertCtrl.create({
       inputs: [
         {
@@ -121,8 +120,8 @@ export class ProfilePage implements OnInit {
         { text: 'Cancel' },
         {
           text: 'Save',
-          handler: data => {
-            this.profileService.updatePassword(
+          handler: async data => {
+            await this.profileService.updatePassword(
               data.newPassword,
               data.oldPassword);
           },
