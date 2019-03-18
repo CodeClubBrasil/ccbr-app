@@ -39,45 +39,45 @@
       </ion-label>
     </ion-item>
 
-    <ion-item (click)="updateEmail()">
-      <ion-label>
-        <ion-grid>
-          <ion-row>
-            <ion-col class="text-left" size="5"> {{ 'EMAIL' | translate}}</ion-col>
-            <ion-col class="text-center" size="7" *ngIf="userProfile?.email"> {{userProfile?.email}} </ion-col>
-            <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
-              <span>{{ 'TAP_EDIT' | translate }}</span>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-label>
-    </ion-item>
+      <ion-item (click)="updateEmail()">
+        <ion-label>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="text-left" size="5"> {{ 'EMAIL' | translate}}</ion-col>
+              <ion-col class="text-center" size="7" *ngIf="userProfile?.email"> {{userProfile?.email}} </ion-col>
+              <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.email">
+                <span>{{ 'TAP_EDIT' | translate }}</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
 
-    <ion-item (click)="updateTelephone()">
-      <ion-label>
-        <ion-grid>
-          <ion-row>
-            <ion-col class="text-left" size="5"> {{ 'TELEPHONE' | translate}}</ion-col>
-            <ion-col class="text-center" size="7" *ngIf="userProfile?.telephone"> {{userProfile?.telephone}} </ion-col>
-            <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.telephone">
-              <span>{{ 'TAP_EDIT' | translate }}</span>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-label>
-    </ion-item>
-    
-    <ion-item (click)="updatePassword()">
-      <ion-label>
-        <ion-grid>
-          <ion-row>
-            <ion-col class="text-left" size="5">{{ 'PASSWORD' | translate }}</ion-col>
-            <ion-col class="text-center" size="7" class="placeholder-profile">
-              <span>{{ 'TAP_EDIT' | translate }}</span>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-label>
-    </ion-item>
+      <ion-item (click)="updateTelephone()">
+        <ion-label>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="text-left" size="5"> {{ 'TELEPHONE' | translate}}</ion-col>
+              <ion-col class="text-center" size="7" *ngIf="userProfile?.telephone"> {{userProfile?.telephone}} </ion-col>
+              <ion-col size="7" class="placeholder-profile text-center" *ngIf="!userProfile?.telephone">
+                <span>{{ 'TAP_EDIT' | translate }}</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
+      
+      <ion-item (click)="updatePassword()">
+        <ion-label>
+          <ion-grid>
+            <ion-row>
+              <ion-col class="text-left" size="5">{{ 'PASSWORD' | translate }}</ion-col>
+              <ion-col size="7" class="placeholder-profile text-center" *ngIf="userProfile?.password">
+                  <span>{{ 'TAP_EDIT' | translate }}</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-label>
+      </ion-item>
   </ion-list>
 </ion-content>

@@ -28,11 +28,11 @@ export class ProfileService {
     return this.userProfile.update({ firstName, lastName });
   }
 
-  updateTelephone(newTelephone: string): Promise<any> {
-    return this.userProfile.update({ newTelephone });
+  updateTelephone(telephone: string): Promise<any> {
+    return this.userProfile.update({ telephone });
   }
 
-  async updateEmail(newEmail: string, password: string): Promise<any> {
+  async updateEmail(newEmail: string, password: string) {
     const credential: firebase.auth.AuthCredential =
       firebase.auth.EmailAuthProvider.credential(
         this.currentUser.email,
@@ -42,15 +42,14 @@ export class ProfileService {
     try {
       await this.currentUser
         .reauthenticateAndRetrieveDataWithCredential(credential);
-      this.currentUser.updateEmail(newEmail).then(() => {
+        await this.currentUser.updateEmail(newEmail);
         this.userProfile.update({ email: newEmail });
-      });
     } catch (error) {
       console.error(error);
     }
   }
 
-  async updatePassword(newPassword: string, oldPassword: string): Promise<any> {
+  async updatePassword(newPassword: string, oldPassword: string) {
     const credential: firebase.auth.AuthCredential =
       firebase.auth.EmailAuthProvider.credential(
         this.currentUser.email,
@@ -60,9 +59,8 @@ export class ProfileService {
     try {
       await this.currentUser
         .reauthenticateAndRetrieveDataWithCredential(credential);
-      this.currentUser.updatePassword(newPassword).then(() => {
-        this.userProfile.update({ password: newPassword });
-      });
+      await this.currentUser.updatePassword(newPassword);
+      this.userProfile.update({ password: newPassword });
 
     } catch (error) {
       console.error(error);
