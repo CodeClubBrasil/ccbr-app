@@ -97,5 +97,20 @@
   "MY_CODE_CLUB" : "My Code Club",
   "MANAGE_CLUB_STUDENT": "Manager your classes and students",
   "MY_PROFILE": "My Profile",
-  "MANAGE_YOUR_DATA": "Keep your data updated"
+  "MANAGE_YOUR_DATA": "Keep your data updated",
+
+  "PHONE_REQUIRED": "Phone is required.",
+  "INCORRECT_COUNTRY_PHONE": "The phone is incorrect for the selected country.",
+  "UNITED_KINGDOM": "United Kingdom",
+  "UNITED_STATES": "United States",
+  "BRAZIL": "Brazil",
+  
+  "FIRST_LAST_NAME": "Your first name & last name",
+  "FIRST_NAME": "Your first name",
+  "LAST_NAME": "Your last name",
+  "NEW_EMAIL": "Your new email",
+  "YOUR_PASSWORD": "Your password",
+  "YOUR_TELEPHONE": "Your telephone",
+  "NEW_PWD": "New password",
+  "OLD_PWD": "Old password"
   }

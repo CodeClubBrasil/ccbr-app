@@ -90,5 +90,21 @@
   "PASSWORD_MISMATCH": "A senha não confere.",
 
   "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário.",
-  "MANAGE_YOUR_DATA": "Keep your data updated"
+  "MANAGE_YOUR_DATA": "Keep your data updated",
+
+  "PHONE_REQUIRED": "O campo telefone é necessário",
+  "INCORRECT_COUNTRY_PHONE": "O telefone está incorreto para o país selecionado.",
+  "UNITED_KINGDOM": "Reino Unido",
+  "UNITED_STATES": "Estados Unidos",
+  "BRAZIL": "Brasil",
+  
+  "FIRST_LAST_NAME": "Seu primeiro nome & último nome",
+  "FIRST_NAME": "Seu primeiro nome",
+  "LAST_NAME": "Seu último nome",
+  "NEW_EMAIL": "Seu novo email",
+  "YOUR_PASSWORD": "Sua senha",
+  "YOUR_TELEPHONE": "Seu telefone",
+  "NEW_PWD": "Senha nova",
+  "OLD_PWD": "Senha velha"
+
   }

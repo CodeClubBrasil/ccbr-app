@@ -20,7 +20,7 @@ export class SignupPage implements OnInit {
   private new_signup_form: FormGroup;
   private matching_passwords_group: FormGroup;
 
-  private validation_messages = {};
+  public validation_messages = {};
 
   private emailRequiredErrorString: string;
   private emailValid: string;
