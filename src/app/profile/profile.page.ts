@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/user/profile/profile.service';
 import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { AuthService } from '../services/authentication/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-import { CountryPhone } from '../models/country-phone.model';
+// import { CountryPhone } from '../models/country-phone.model';
 
-import { PhoneValidator } from '../../app/validators/phone.validator';
+// import { PhoneValidator } from '../../app/validators/phone.validator';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -24,28 +25,29 @@ export class ProfilePage implements OnInit {
   private unitedKingdom: string;
   private unitedStates: string;
   private brazil: string;
-  private first_and_last_name: string;
-  private first_name: string;
-  private last_name: string;
-  private new_email: string;
-  private your_pwd: string;
-  private your_telephone: string;
-  private new_pwd: string;
-  private old_pwd: string;
+  private firstAndast_name: string;
+  private firstName: string;
+  private lastName: string;
+  private newEmail: string;
+  private yourPwd: string;
+  private yourTelephone: string;
+  private newPwd: string;
+  private oldPwd: string;
 
-  countries: Array<CountryPhone>;
+  // countries: Array<CountryPhone>;
 
-  private country_phone_group: FormGroup;
-  public  validations_form: FormGroup;
+  // private country_phone_group: FormGroup;
+  // public  validations_form: FormGroup;
 
 
   constructor(
     private translateService: TranslateService,
     private profileService: ProfileService,
     private alertCtrl: AlertController,
+    private toastCtrl: ToastController,
     private authService: AuthService,
     private router: Router,
-    public formBuilder: FormBuilder
+    // public formBuilder: FormBuilder
   ) {
     this.translateService.get('PHONE_REQUIRED').subscribe(value => {
       this.phoneRequiredErrorString = value;
@@ -63,28 +65,28 @@ export class ProfilePage implements OnInit {
       this.brazil = value;
     });
     this.translateService.get('FIRST_LAST_NAME').subscribe(value => {
-      this.first_and_last_name = value;
+      this.firstAndast_name = value;
     });
     this.translateService.get('FIRST_NAME').subscribe(value => {
-      this.first_name = value;
+      this.firstName = value;
     });
     this.translateService.get('LAST_NAME').subscribe(value => {
-      this.last_name = value;
+      this.lastName = value;
     });
     this.translateService.get('NEW_EMAIL').subscribe(value => {
-      this.new_email = value;
+      this.newEmail = value;
     });
     this.translateService.get('YOUR_PASSWORD').subscribe(value => {
-      this.your_pwd = value;
+      this.yourPwd = value;
     });
     this.translateService.get('YOUR_TELEPHONE').subscribe(value => {
-      this.your_telephone = value;
+      this.yourTelephone = value;
     });
     this.translateService.get('NEW_PWD').subscribe(value => {
-      this.new_pwd = value;
+      this.newPwd = value;
     });
     this.translateService.get('OLD_PWD').subscribe(value => {
-      this.old_pwd = value;
+      this.oldPwd = value;
     });
   }
 
@@ -92,25 +94,25 @@ export class ProfilePage implements OnInit {
     const userProfileSnapshot = await this.profileService.getUserProfile().get();
     this.userProfile = userProfileSnapshot.data();
 
-    this.countries = [
-      new CountryPhone('UK', this.unitedKingdom),
-      new CountryPhone('US', this.unitedStates),
-      new CountryPhone('BR', this.brazil)
-    ];
+    // this.countries = [
+    //   new CountryPhone('UK', this.unitedKingdom),
+    //   new CountryPhone('US', this.unitedStates),
+    //   new CountryPhone('BR', this.brazil)
+    // ];
 
-    const country = new FormControl(this.countries[0], Validators.required);
-    const phone = new FormControl('', Validators.compose([
-      Validators.required,
-      PhoneValidator.validCountryPhone(country)
-    ]));
-    this.country_phone_group = new FormGroup({
-      country: country,
-      phone: phone
-    });
+    // const country = new FormControl(this.countries[0], Validators.required);
+    // const phone = new FormControl('', Validators.compose([
+    //   Validators.required,
+    //   PhoneValidator.validCountryPhone(country)
+    // ]));
+    // this.country_phone_group = new FormGroup({
+    //   country: country,
+    //   phone: phone
+    // });
 
-    this.validations_form = this.formBuilder.group({
-      country_phone: this.country_phone_group
-    });
+    // this.validations_form = this.formBuilder.group({
+    //   country_phone: this.country_phone_group
+    // });
 
     this.validation_messages = {
       'phone': [
@@ -127,16 +129,16 @@ export class ProfilePage implements OnInit {
 
   async updateName() {
     const alert = await this.alertCtrl.create({
-      subHeader: this.first_and_last_name,
+      subHeader: this.firstAndast_name,
       inputs: [
         {
           type: 'text',
-          name: 'firstName', placeholder: this.first_name,
+          name: 'firstName', placeholder: this.firstName,
           value: this.userProfile.firstName,
         },
         {
           type: 'text',
-          name: 'lastName', placeholder: this.last_name,
+          name: 'lastName', placeholder: this.lastName,
           value: this.userProfile.lastName,
         },
       ],
@@ -145,30 +147,42 @@ export class ProfilePage implements OnInit {
         {
           text: 'Save',
           handler: async data => {
-          await this.profileService.updateName(data.firstName, data.lastName);
-          this.ngOnInit();
+            if (data.firstName === '' || data.lastName === '') {
+              this.presentToast('field(s) cannot be empty');
+            } else {
+              await this.profileService.updateName(data.firstName, data.lastName);
+              this.ngOnInit();
+            }
           },
         },
       ],
     });
     await alert.present();
-
   }
 
   async updateEmail() {
     const alert = await this.alertCtrl.create({
       inputs: [
-        { type: 'text', name: 'newEmail', placeholder: this.new_email },
-        { name: 'password', placeholder: this.your_pwd, type: 'password' }, ],
+        { type: 'text', name: 'newEmail', placeholder: this.newEmail },
+        { name: 'password', placeholder: this.yourPwd, type: 'password' }, ],
       buttons: [
         { text: 'Cancel' }, {
           text: 'Save',
           handler: async data => {
-            try {
-              await this.profileService.updateEmail(data.newEmail, data.password);
-              console.log('Email Changed Successfully');
-            } catch (error) {
-              console.log('ERROR: ' + error.message);
+            const regexp = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$');
+            if (data.newEmail === '' || data.password === '' ) {
+              this.presentToast('field(s) cannot be empty');
+            } else {
+              if (regexp.test(data.newEmail)) {
+                try {
+                  await this.profileService.updateEmail(data.newEmail, data.password);
+                  console.log('Email Changed Successfully');
+                } catch (error) {
+                  console.error('ERROR: ' + error.message);
+                }
+              } else {
+                this.presentToast('The email entered is not valid');
+              }
             }
             this.ngOnInit();
           },
@@ -180,10 +194,10 @@ export class ProfilePage implements OnInit {
 
   async updateTelephone() {
     const alert = await this.alertCtrl.create({
-      subHeader: this.your_telephone, inputs: [
+      subHeader: this.yourTelephone, inputs: [
         {
           type: 'tel',
-          name: 'telephone', placeholder: this.your_telephone,
+          name: 'telephone', placeholder: this.yourTelephone,
           value: this.userProfile.telephone,
         },
       ], buttons: [
@@ -204,12 +218,12 @@ export class ProfilePage implements OnInit {
       inputs: [
         {
           name: 'newPassword',
-          placeholder: this.new_pwd,
+          placeholder: this.newPwd,
           type: 'password'
         },
         {
           name: 'oldPassword',
-          placeholder: this.old_pwd,
+          placeholder: this.oldPwd,
           type: 'password'
         },
       ], buttons: [
@@ -225,5 +239,19 @@ export class ProfilePage implements OnInit {
       ],
     });
     await alert.present();
+  }
+
+  async presentToast(warningMessage: string) {
+    const toast = await this.toastCtrl.create({
+      message: warningMessage,
+      // message: 'field(s) cannot be empty',
+      duration: 2000,
+      position: 'top'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+    toast.present();
   }
 }
