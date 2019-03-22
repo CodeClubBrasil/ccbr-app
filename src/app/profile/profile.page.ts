@@ -33,6 +33,10 @@ export class ProfilePage implements OnInit {
   private yourTelephone: string;
   private newPwd: string;
   private oldPwd: string;
+  private pwd_min_length: string;
+  private pwd_invalid: string;
+  private fields_not_empty: string;
+  private invalid_email: string;
 
   // countries: Array<CountryPhone>;
 
@@ -87,6 +91,18 @@ export class ProfilePage implements OnInit {
     });
     this.translateService.get('OLD_PWD').subscribe(value => {
       this.oldPwd = value;
+    });
+    this.translateService.get('PASSWORD_MIN_LENGTH').subscribe(value => {
+      this.pwd_min_length = value;
+    });
+    this.translateService.get('PASSWORD_VALID').subscribe(value => {
+      this.pwd_invalid = value;
+    });
+    this.translateService.get('FIELDS_NOT_EMPTY').subscribe(value => {
+      this.fields_not_empty = value;
+    });
+    this.translateService.get('EMAIL_VALID').subscribe(value => {
+      this.invalid_email = value;
     });
   }
 
@@ -148,7 +164,7 @@ export class ProfilePage implements OnInit {
           text: 'Save',
           handler: async data => {
             if (data.firstName === '' || data.lastName === '') {
-              this.presentToast('field(s) cannot be empty');
+              this.presentToast(this.fields_not_empty);
             } else {
               await this.profileService.updateName(data.firstName, data.lastName);
               this.ngOnInit();
@@ -171,7 +187,7 @@ export class ProfilePage implements OnInit {
           handler: async data => {
             const regexp = new RegExp('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$');
             if (data.newEmail === '' || data.password === '' ) {
-              this.presentToast('field(s) cannot be empty');
+              this.presentToast(this.fields_not_empty);
             } else {
               if (regexp.test(data.newEmail)) {
                 try {
@@ -181,7 +197,7 @@ export class ProfilePage implements OnInit {
                   console.error('ERROR: ' + error.message);
                 }
               } else {
-                this.presentToast('The email entered is not valid');
+                this.presentToast(this.invalid_email);
               }
             }
             this.ngOnInit();
@@ -214,6 +230,7 @@ export class ProfilePage implements OnInit {
   }
 
   async updatePassword() {
+    const regexpPassword = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9-!@#$%^&*]+$');
     const alert = await this.alertCtrl.create({
       inputs: [
         {
@@ -231,9 +248,21 @@ export class ProfilePage implements OnInit {
         {
           text: 'Save',
           handler: async data => {
-            await this.profileService.updatePassword(
-              data.newPassword,
-              data.oldPassword);
+            try {
+              if (data.newPassword === '' || data.oldPassword === '') {
+                this.presentToast(this.fields_not_empty);
+              } else if (data.newPassword.length < 8) {
+                this.presentToast(this.pwd_min_length);
+              } else if (!regexpPassword.test(data.newPassword)) {
+                this.presentToast(this.pwd_invalid);
+              } else {
+                await this.profileService.updatePassword(
+                  data.newPassword,
+                  data.oldPassword);
+              }
+            } catch (error) {
+              console.log(`This is the error message: ${error.message}`);
+            }
           },
         },
       ],
@@ -245,7 +274,7 @@ export class ProfilePage implements OnInit {
     const toast = await this.toastCtrl.create({
       message: warningMessage,
       // message: 'field(s) cannot be empty',
-      duration: 2000,
+      duration: 3000,
       position: 'top'
     });
 

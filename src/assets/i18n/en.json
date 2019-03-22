@@ -112,5 +112,6 @@
   "YOUR_PASSWORD": "Your password",
   "YOUR_TELEPHONE": "Your telephone",
   "NEW_PWD": "New password",
-  "OLD_PWD": "Old password"
+  "OLD_PWD": "Old password",
+  "FIELDS_NOT_EMPTY": "field(s) cannot be empty"
   }

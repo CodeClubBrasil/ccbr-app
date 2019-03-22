@@ -105,6 +105,7 @@
   "YOUR_PASSWORD": "Sua senha",
   "YOUR_TELEPHONE": "Seu telefone",
   "NEW_PWD": "Senha nova",
-  "OLD_PWD": "Senha velha"
+  "OLD_PWD": "Senha velha",
+  "FIELDS_NOT_EMPTY": "Por favor preencha os campos"
 
   }
