@@ -251,11 +251,20 @@ export class ProfilePage implements OnInit {
   }
 
   async updateTelephone() {
+    const currentUserCountry = this.userProfile.country;
+    let countryPlaceholder: string;
+
+    this.countries.forEach((value) => {
+      if (value.name === currentUserCountry) {
+        countryPlaceholder = value.sample_phone;
+      }
+    });
     const alert = await this.alertCtrl.create({
       subHeader: this.yourTelephone, inputs: [
         {
           type: 'tel',
-          name: 'telephone', placeholder: this.yourTelephone,
+          name: 'telephone',
+          placeholder: countryPlaceholder,
           value: this.userProfile.telephone
         },
       ], buttons: [
