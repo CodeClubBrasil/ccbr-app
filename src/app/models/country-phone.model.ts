@@ -11,8 +11,8 @@ export class CountryPhone {
     this.name = name;
 
     const phoneUtil = PhoneNumberUtil.getInstance(),
-        PNF = libphonenumber.PhoneNumberFormat,
-        PNT = libphonenumber.PhoneNumberType,
+        PNF = require('google-libphonenumber').PhoneNumberFormat,
+        PNT = require('google-libphonenumber').PhoneNumberType,
         country_example_number = phoneUtil.getExampleNumberForType(this.iso, PNT.MOBILE),
         // We need to define what kind of country phone number type we are going to use as a mask.
         // You can choose between many types including:
