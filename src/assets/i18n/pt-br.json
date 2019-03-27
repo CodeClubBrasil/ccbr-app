@@ -21,7 +21,7 @@
   "TAB2_TITLE": "Busca",
   "TAB3_TITLE": "Configurações",
 
-  "TAP_EDIT": "Tap to edit",
+  "TAP_EDIT": "Toque para editar",
 
   "WARNING_ALERT": "Aviso",
   "FORM_ERROR": "Erros no formulário",
@@ -75,11 +75,6 @@
   "CANCEL_BUTTON": "Cancelar",
   "DELETE_BUTTON": "Apagar",
 
-  "CARDS_TITLE": "Social",
-
-  "SEARCH_TITLE": "Busca",
-  "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
-
   "EMAIL_VALID": "Entre um email válido.",
   "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
   "EMAIL_REQUIRED": "O campo email é necessário.",
@@ -90,11 +85,10 @@
   "PASSWORD_MISMATCH": "A senha não confere.",
 
   "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário.",
-  "MANAGE_YOUR_DATA": "Keep your data updated",
 
   "PHONE_REQUIRED": "O campo telefone é necessário",
   "INCORRECT_COUNTRY_PHONE": "O telefone está incorreto para o país selecionado.",
-  "UNITED_KINGDOM": "Reino Unido",
+  "ENGLAND": "Reino Unido",
   "UNITED_STATES": "Estados Unidos",
   "BRAZIL": "Brasil",
   
@@ -106,6 +100,7 @@
   "YOUR_TELEPHONE": "Seu telefone",
   "NEW_PWD": "Senha nova",
   "OLD_PWD": "Senha velha",
-  "FIELDS_NOT_EMPTY": "Por favor preencha os campos"
+  "FIELDS_NOT_EMPTY": "Por favor preencha os campos",
+  "COUNTRY": "País"
 
   }

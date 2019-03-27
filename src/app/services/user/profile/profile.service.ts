@@ -28,6 +28,10 @@ export class ProfileService {
     return this.userProfile.update({ firstName, lastName });
   }
 
+  updateCountry(country: string) {
+    return this.userProfile.update({ country });
+  }
+
   updateTelephone(telephone: string): Promise<any> {
     return this.userProfile.update({ telephone });
   }
@@ -56,14 +60,9 @@ export class ProfileService {
         oldPassword
       );
 
-    try {
       await this.currentUser
         .reauthenticateAndRetrieveDataWithCredential(credential);
       await this.currentUser.updatePassword(newPassword);
       this.userProfile.update({ password: newPassword });
-
-    } catch (error) {
-      console.error(error);
-    }
   }
 }

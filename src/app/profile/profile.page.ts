@@ -4,11 +4,10 @@ import { AlertController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { AuthService } from '../services/authentication/auth.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
-// import { CountryPhone } from '../models/country-phone.model';
-
+import { CountryPhone } from '../models/country-phone.model';
 // import { PhoneValidator } from '../../app/validators/phone.validator';
+
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -22,7 +21,7 @@ export class ProfilePage implements OnInit {
 
   private phoneRequiredErrorString: string;
   private incorrectCountryPhone: string;
-  private unitedKingdom: string;
+  private england: string;
   private unitedStates: string;
   private brazil: string;
   private firstAndast_name: string;
@@ -37,12 +36,9 @@ export class ProfilePage implements OnInit {
   private pwd_invalid: string;
   private fields_not_empty: string;
   private invalid_email: string;
+  public country: string;
 
-  // countries: Array<CountryPhone>;
-
-  // private country_phone_group: FormGroup;
-  // public  validations_form: FormGroup;
-
+  public countries: Array<CountryPhone>;
 
   constructor(
     private translateService: TranslateService,
@@ -50,8 +46,7 @@ export class ProfilePage implements OnInit {
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
     private authService: AuthService,
-    private router: Router,
-    // public formBuilder: FormBuilder
+    private router: Router
   ) {
     this.translateService.get('PHONE_REQUIRED').subscribe(value => {
       this.phoneRequiredErrorString = value;
@@ -59,8 +54,8 @@ export class ProfilePage implements OnInit {
     this.translateService.get('INCORRECT_COUNTRY_PHONE').subscribe(value => {
       this.incorrectCountryPhone = value;
     });
-    this.translateService.get('UNITED_KINGDOM').subscribe(value => {
-      this.unitedKingdom = value;
+    this.translateService.get('ENGLAND').subscribe(value => {
+      this.england = value;
     });
     this.translateService.get('UNITED_STATES').subscribe(value => {
       this.unitedStates = value;
@@ -104,17 +99,20 @@ export class ProfilePage implements OnInit {
     this.translateService.get('EMAIL_VALID').subscribe(value => {
       this.invalid_email = value;
     });
+    this.translateService.get('COUNTRY').subscribe(value => {
+      this.country = value;
+    });
   }
 
   async ngOnInit() {
     const userProfileSnapshot = await this.profileService.getUserProfile().get();
     this.userProfile = userProfileSnapshot.data();
 
-    // this.countries = [
-    //   new CountryPhone('UK', this.unitedKingdom),
-    //   new CountryPhone('US', this.unitedStates),
-    //   new CountryPhone('BR', this.brazil)
-    // ];
+    this.countries = [
+      new CountryPhone('GB', this.england),
+      new CountryPhone('US', this.unitedStates),
+      new CountryPhone('BR', this.brazil)
+    ];
 
     // const country = new FormControl(this.countries[0], Validators.required);
     // const phone = new FormControl('', Validators.compose([
@@ -208,13 +206,57 @@ export class ProfilePage implements OnInit {
     await alert.present();
   }
 
+  async updateCountry() {
+    const alert = await this.alertCtrl.create({
+      header: 'Countries',
+      inputs: [
+        {
+          name: 'country',
+          type: 'checkbox',
+          label: this.countries[0].name,
+          value: this.countries[0].name
+        },
+        {
+          name: 'country',
+          type: 'checkbox',
+          label: this.countries[1].name,
+          value: this.countries[1].name
+        },
+        {
+          name: 'country',
+          type: 'checkbox',
+          label: this.countries[2].name,
+          value: this.countries[2].name
+        },
+      ], buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm cancel!');
+          }
+        },
+        {
+          text: 'Save',
+          handler: async data => {
+            console.log(data);
+            await this.profileService.updateCountry(data[0]);
+            this.ngOnInit();
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
+
   async updateTelephone() {
     const alert = await this.alertCtrl.create({
       subHeader: this.yourTelephone, inputs: [
         {
           type: 'tel',
           name: 'telephone', placeholder: this.yourTelephone,
-          value: this.userProfile.telephone,
+          value: this.userProfile.telephone
         },
       ], buttons: [
         { text: 'Cancel' }, {
@@ -273,7 +315,6 @@ export class ProfilePage implements OnInit {
   async presentToast(warningMessage: string) {
     const toast = await this.toastCtrl.create({
       message: warningMessage,
-      // message: 'field(s) cannot be empty',
       duration: 3000,
       position: 'top'
     });

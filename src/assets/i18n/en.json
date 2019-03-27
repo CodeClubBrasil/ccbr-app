@@ -17,10 +17,6 @@
   "YOUR_REGISTERED_EMAIL": "Your registered email",
   "TELEPHONE": "Telephone",
 
-  "TAB1_TITLE": "Clubs",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
-
   "TAP_EDIT": "Tap to edit",
 
   "WARNING_ALERT": "Warning",
@@ -60,11 +56,6 @@
 
   "LIST_MASTER_TITLE": "Clubs",
 
-  "LOOKING_FOR_VOLUNTEERS": "Looking for volunteers",
-  "RUN_WITHOUT_VOLUNTEER" : "Could be run without volunteers",
-  "HAPPY_TO_BE_CONTACTED" : "Would enjoy to be contacted",
-  "ADDRESS": "Address", 
-
   "ITEM_CREATE_TITLE": "New Club",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
@@ -74,11 +65,7 @@
   "DONE_BUTTON": "Done",
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
-
-  "CARDS_TITLE": "Social",
-
-  "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+  
 
   "EMAIL_VALID": "Enter a valid email.",
   "EMAIL_VALID_USER_MAIL": "Your email has already been taken.",
@@ -101,7 +88,7 @@
 
   "PHONE_REQUIRED": "Phone is required.",
   "INCORRECT_COUNTRY_PHONE": "The phone is incorrect for the selected country.",
-  "UNITED_KINGDOM": "United Kingdom",
+  "ENGLAND": "United Kingdom",
   "UNITED_STATES": "United States",
   "BRAZIL": "Brazil",
   
@@ -113,5 +100,6 @@
   "YOUR_TELEPHONE": "Your telephone",
   "NEW_PWD": "New password",
   "OLD_PWD": "Old password",
-  "FIELDS_NOT_EMPTY": "field(s) cannot be empty"
+  "FIELDS_NOT_EMPTY": "field(s) cannot be empty",
+  "COUNTRY": "Country"
   }
