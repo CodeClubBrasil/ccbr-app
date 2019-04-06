@@ -87,7 +87,8 @@
   "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário.",
 
   "PHONE_REQUIRED": "O campo telefone é necessário",
-  "INCORRECT_COUNTRY_PHONE": "O telefone está incorreto para o país selecionado.",
+  "INCORRECT_COUNTRY_PHONE": "O telefone está incorreto para o país selecionado: ",
+  "ONLY_ONE_COUNTRY": "Por favor, selecione somente um país",
   "ENGLAND": "Reino Unido",
   "UNITED_STATES": "Estados Unidos",
   "BRAZIL": "Brasil",

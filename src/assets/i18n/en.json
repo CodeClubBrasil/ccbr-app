@@ -87,7 +87,8 @@
   "MANAGE_YOUR_DATA": "Keep your data updated",
 
   "PHONE_REQUIRED": "Phone is required.",
-  "INCORRECT_COUNTRY_PHONE": "The phone is incorrect for the selected country.",
+  "INCORRECT_COUNTRY_PHONE": "This phone number is not valid for the selected country: ",
+  "ONLY_ONE_COUNTRY": "Please, pick only one country",
   "ENGLAND": "United Kingdom",
   "UNITED_STATES": "United States",
   "BRAZIL": "Brazil",

@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../services/user/profile/profile.service';
-import { AlertController } from '@ionic/angular';
-import { ToastController } from '@ionic/angular';
-import { AuthService } from '../services/authentication/auth.service';
 import { Router } from '@angular/router';
-
-import { CountryPhone } from '../models/country-phone.model';
-// import { PhoneValidator } from '../../app/validators/phone.validator';
-
+import { AlertController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
+import { PhoneValidator } from '../../app/validators/phone.validator';
+import { CountryPhone } from '../models/country-phone.model';
+import { AuthService } from '../services/authentication/auth.service';
+import { ProfileService } from '../services/user/profile/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -16,10 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  public userProfile: any;
-  public validation_messages = {};
-
-  private phoneRequiredErrorString: string;
+  private userProfile: any;
   private incorrectCountryPhone: string;
   private england: string;
   private unitedStates: string;
@@ -36,9 +30,10 @@ export class ProfilePage implements OnInit {
   private pwd_invalid: string;
   private fields_not_empty: string;
   private invalid_email: string;
-  public country: string;
+  private onlyOneCountry: string;
+  private country: string;
 
-  public countries: Array<CountryPhone>;
+  private countries: Array<CountryPhone>;
 
   constructor(
     private translateService: TranslateService,
@@ -48,9 +43,6 @@ export class ProfilePage implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {
-    this.translateService.get('PHONE_REQUIRED').subscribe(value => {
-      this.phoneRequiredErrorString = value;
-    });
     this.translateService.get('INCORRECT_COUNTRY_PHONE').subscribe(value => {
       this.incorrectCountryPhone = value;
     });
@@ -99,6 +91,9 @@ export class ProfilePage implements OnInit {
     this.translateService.get('EMAIL_VALID').subscribe(value => {
       this.invalid_email = value;
     });
+    this.translateService.get('ONLY_ONE_COUNTRY').subscribe(value => {
+      this.onlyOneCountry = value;
+    });
     this.translateService.get('COUNTRY').subscribe(value => {
       this.country = value;
     });
@@ -113,27 +108,6 @@ export class ProfilePage implements OnInit {
       new CountryPhone('US', this.unitedStates),
       new CountryPhone('BR', this.brazil)
     ];
-
-    // const country = new FormControl(this.countries[0], Validators.required);
-    // const phone = new FormControl('', Validators.compose([
-    //   Validators.required,
-    //   PhoneValidator.validCountryPhone(country)
-    // ]));
-    // this.country_phone_group = new FormGroup({
-    //   country: country,
-    //   phone: phone
-    // });
-
-    // this.validations_form = this.formBuilder.group({
-    //   country_phone: this.country_phone_group
-    // });
-
-    this.validation_messages = {
-      'phone': [
-        { type: 'required', message: this.phoneRequiredErrorString  },
-        { type: 'validCountryPhone', message: this.incorrectCountryPhone }
-      ]
-    };
   }
 
   async logOut(): Promise<void> {
@@ -240,9 +214,14 @@ export class ProfilePage implements OnInit {
         {
           text: 'Save',
           handler: async data => {
-            console.log(data);
-            await this.profileService.updateCountry(data[0]);
-            this.ngOnInit();
+            if (data[0] === undefined) {
+              this.presentToast(this.fields_not_empty);
+            } else if (data.length > 1) {
+              this.presentToast(this.onlyOneCountry);
+            } else {
+              await this.profileService.updateCountry(data[0]);
+              this.ngOnInit();
+            }
           },
         },
       ],
@@ -252,11 +231,11 @@ export class ProfilePage implements OnInit {
 
   async updateTelephone() {
     const currentUserCountry = this.userProfile.country;
-    let countryPlaceholder: string;
+    let countryPhoneData: any;
 
     this.countries.forEach((value) => {
       if (value.name === currentUserCountry) {
-        countryPlaceholder = value.sample_phone;
+        countryPhoneData = value;
       }
     });
     const alert = await this.alertCtrl.create({
@@ -264,15 +243,23 @@ export class ProfilePage implements OnInit {
         {
           type: 'tel',
           name: 'telephone',
-          placeholder: countryPlaceholder,
+          placeholder: countryPhoneData.sample_phone,
           value: this.userProfile.telephone
         },
       ], buttons: [
         { text: 'Cancel' }, {
           text: 'Save',
           handler: async data => {
-            await this.profileService.updateTelephone(data.telephone);
-            this.ngOnInit();
+            if (data.telephone === '') {
+              this.presentToast(this.fields_not_empty);
+            } else {
+              if (PhoneValidator.validCountryPhone(countryPhoneData, data.telephone)) {
+                await this.profileService.updateTelephone(data.telephone);
+                this.ngOnInit();
+              } else {
+                this.presentToast(this.incorrectCountryPhone + data.telephone);
+              }
+            }
           },
         },
       ],
