@@ -20,10 +20,9 @@
   "LOGIN": "Sign in",
   "FORGOT_PASSWORD": "Forgot your password?",
   "YOUR_REGISTERED_EMAIL": "Your registered email",
+  "TELEPHONE": "Telephone",
 
-  "TAB1_TITLE": "Clubs",
-  "TAB2_TITLE": "Search",
-  "TAB3_TITLE": "Settings",
+  "TAP_EDIT": "Tap to edit",
 
   "WARNING_ALERT": "Warning",
   "FORM_ERROR": "Form errors",
@@ -62,11 +61,6 @@
 
   "LIST_MASTER_TITLE": "Clubs",
 
-  "LOOKING_FOR_VOLUNTEERS": "Looking for volunteers",
-  "RUN_WITHOUT_VOLUNTEER" : "Could be run without volunteers",
-  "HAPPY_TO_BE_CONTACTED" : "Would enjoy to be contacted",
-  "ADDRESS": "Address", 
-
   "ITEM_CREATE_TITLE": "New Club",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
@@ -76,11 +70,7 @@
   "DONE_BUTTON": "Done",
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
-
-  "CARDS_TITLE": "Social",
-
-  "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+  
 
   "EMAIL_VALID": "Enter a valid email.",
   "EMAIL_VALID_USER_MAIL": "Your email has already been taken.",
@@ -101,5 +91,21 @@
   "MY_PROFILE": "My Profile",
   "MANAGE_YOUR_DATA": "Keep your data updated",
 
-  "CLASS_NAME_INPUT": "Class name"
+  "PHONE_REQUIRED": "Phone is required.",
+  "INCORRECT_COUNTRY_PHONE": "This phone number is not valid for the selected country: ",
+  "ONLY_ONE_COUNTRY": "Please, pick only one country",
+  "ENGLAND": "United Kingdom",
+  "UNITED_STATES": "United States",
+  "BRAZIL": "Brazil",
+  
+  "FIRST_LAST_NAME": "Your first name & last name",
+  "FIRST_NAME": "Your first name",
+  "LAST_NAME": "Your last name",
+  "NEW_EMAIL": "Your new email",
+  "YOUR_PASSWORD": "Your password",
+  "YOUR_TELEPHONE": "Your telephone",
+  "NEW_PWD": "New password",
+  "OLD_PWD": "Old password",
+  "FIELDS_NOT_EMPTY": "field(s) cannot be empty",
+  "COUNTRY": "Country"
   }

@@ -17,10 +17,13 @@
   "LOGIN": "Entrar",
   "FORGOT_PASSWORD": "Esqueceu sua senha?",
   "YOUR_REGISTERED_EMAIL": "Seu email cadastrado",
+  "TELEPHONE": "Telefone",
 
   "TAB1_TITLE": "Itens",
   "TAB2_TITLE": "Busca",
   "TAB3_TITLE": "Configurações",
+
+  "TAP_EDIT": "Toque para editar",
 
   "WARNING_ALERT": "Aviso",
   "FORM_ERROR": "Erros no formulário",
@@ -74,11 +77,6 @@
   "CANCEL_BUTTON": "Cancelar",
   "DELETE_BUTTON": "Apagar",
 
-  "CARDS_TITLE": "Social",
-
-  "SEARCH_TITLE": "Busca",
-  "SEARCH_PLACEHOLDER": "Procure um item da lista, ex: \"Donald Duck\"",
-
   "EMAIL_VALID": "Entre um email válido.",
   "EMAIL_VALID_USER_MAIL": "Seu email já está cadastrado.",
   "EMAIL_REQUIRED": "O campo email é necessário.",
@@ -90,5 +88,22 @@
 
   "CONFIRM_PASSWORD_REQUIRED": "O campo confirme sua senha é necessário.",
 
-  "CLASS_NAME_INPUT": "Nome da turma"
+  "PHONE_REQUIRED": "O campo telefone é necessário",
+  "INCORRECT_COUNTRY_PHONE": "O telefone está incorreto para o país selecionado: ",
+  "ONLY_ONE_COUNTRY": "Por favor, selecione somente um país",
+  "ENGLAND": "Reino Unido",
+  "UNITED_STATES": "Estados Unidos",
+  "BRAZIL": "Brasil",
+  
+  "FIRST_LAST_NAME": "Seu primeiro nome & último nome",
+  "FIRST_NAME": "Seu primeiro nome",
+  "LAST_NAME": "Seu último nome",
+  "NEW_EMAIL": "Seu novo email",
+  "YOUR_PASSWORD": "Sua senha",
+  "YOUR_TELEPHONE": "Seu telefone",
+  "NEW_PWD": "Senha nova",
+  "OLD_PWD": "Senha velha",
+  "FIELDS_NOT_EMPTY": "Por favor preencha os campos",
+  "COUNTRY": "País"
+
   }

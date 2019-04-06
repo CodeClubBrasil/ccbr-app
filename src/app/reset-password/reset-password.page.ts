@@ -108,13 +108,13 @@ export class ResetPasswordPage implements OnInit {
               {
                 text: 'OK', role: 'cancel',
                 handler: () => {
-                  this.router.navigateByUrl('login');
+                  this.router.navigateByUrl('');
                 },
               },
             ],
           });
           await alert.present();
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('');
 
         },
         async error => {

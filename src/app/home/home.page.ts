@@ -14,12 +14,12 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
   }
-  
+
   logOut(): void {
     this.authService.logoutUser().then(() => {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl('');
     }
-    )
+    );
   }
 
 }

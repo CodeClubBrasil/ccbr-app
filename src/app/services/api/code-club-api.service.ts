@@ -6,9 +6,9 @@ import { environment } from '../../../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Authorization': 'Bearer ' + environment.codeClubApiToken })
-}
+};
 
-const uri = environment.codeClubApiUri
+const uri = environment.codeClubApiUri;
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +31,9 @@ export class CodeClubApiService {
     // return an observable with a user-facing error message
     return throwError('Something bad happened; please try again later.');
   }
-  
+
   private extractData(res: Response) {
-    let body = res;
+    const body = res;
     return body || { };
   }
 
@@ -41,7 +41,7 @@ export class CodeClubApiService {
     return this.http.get(uri + '/clubs', httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError)
-    )
+    );
   }
 
 
