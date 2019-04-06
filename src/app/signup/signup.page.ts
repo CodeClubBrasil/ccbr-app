@@ -20,7 +20,7 @@ export class SignupPage implements OnInit {
   private new_signup_form: FormGroup;
   private matching_passwords_group: FormGroup;
 
-  private validation_messages = {};
+  public validation_messages = {};
 
   private emailRequiredErrorString: string;
   private emailValid: string;
@@ -156,7 +156,7 @@ export class SignupPage implements OnInit {
       this.authService.signupUser(email, password).then(
         () => {
           this.loading.dismiss().then(() => {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('profile');
           });
         },
         error => {

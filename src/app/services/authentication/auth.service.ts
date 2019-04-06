@@ -23,8 +23,7 @@ export class AuthService {
         .firestore()
         .doc(`/userProfile/${newUserCredential.user.uid}`)
         .set({ email });
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error);
       throw new Error(error);
     }
