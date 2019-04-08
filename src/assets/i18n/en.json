@@ -1,10 +1,10 @@
 {
   "CODE_CLUB_COUNTRY": "BRASIL",
 
-  "NEW_CLASS": "Turma Nova",
+  "NEW_CLASS": "New class",
 
   "CODE_CLUB": "Code Club",
-  "SELECT_CLUB": "Selecione um clube",
+  "CHOOSE_CLUB": "Choose a club",
 
   "BACK_BUTTON_TEXT": "Back",
 
@@ -58,6 +58,7 @@
   "FORGOT_PASSWORD_SUBMIT": "SEND ME A NEW PASSWORD",
   "FORGOT_PASSWORD_TEXT": "Type the registered email to receive a new password in your inbox",
   "REGISTER_CLASS": "ADD NEW CLASS",
+  "CLASS_NAME_INPUT": "Class name",
 
   "LIST_MASTER_TITLE": "Clubs",
 

@@ -25,25 +25,25 @@
 </ion-header>
 
 <ion-content padding class="form-content">
-  <form class="form" [formGroup]="createClassForm" (submit)="createClass()">
-  <h1> text-center margin-bottom>{{ 'NEW_CLASS' | translate}}</h1>
+  <!-- <form class="form" [formGroup]="createClassForm" (submit)="createClass()"> -->
+  <!-- <h1> text-center margin-bottom>{{ 'NEW_CLASS' | translate}}</h1> -->
   <ion-list>
     <ion-item>
       <ion-label>{{ 'CODE_CLUB' | translate }}</ion-label>
-      <ion-select placeholder="{{ 'SELECT_CLUB' | translate }}">
+      <ion-select placeholder="{{ 'CHOOSE_CLUB' | translate }}">
         <ion-select-option *ngFor="let club of clubs" value={{club.id}}>{{club.name}}</ion-select-option>
       </ion-select>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label position="floating" color="primary">{{ 'CLASS_NAME_INPUT' | translate }}</ion-label>
       <ion-input type="text" formControlName="className" required></ion-input>
-    </ion-item>
+    </ion-item> -->
   </ion-list>
   <!--
         <div *ngIf="selectedItem" padding>
           You navigated here from <b>{{selectedItem.title }}</b>
         </div>
       -->
-</form>
+<!-- </form> -->
 </ion-content>
