@@ -59,6 +59,8 @@
   "FORGOT_PASSWORD_TEXT": "Type the registered email to receive a new password in your inbox",
   "REGISTER_CLASS": "ADD NEW CLASS",
   "CLASS_NAME_INPUT": "Class name",
+  "SAVE_NEW_CLASS": "SAVE NEW CLASS",
+  "CLASS_NAME_REQUIRED": "Class name is required",
 
   "LIST_MASTER_TITLE": "Clubs",
 
@@ -72,7 +74,6 @@
   "CANCEL_BUTTON": "Cancel",
   "DELETE_BUTTON": "Delete",
   
-
   "EMAIL_VALID": "Enter a valid email.",
   "EMAIL_VALID_USER_MAIL": "Your email has already been taken.",
   "EMAIL_REQUIRED": "Email is required.",
@@ -108,5 +109,27 @@
   "NEW_PWD": "New password",
   "OLD_PWD": "Old password",
   "FIELDS_NOT_EMPTY": "field(s) cannot be empty",
-  "COUNTRY": "Country"
-  }
+  "COUNTRY": "Country",
+
+  "WEEKDAY": "Weekday",
+  "SHIFT": "Shift",
+  "STARTS_AT": "Starts at",
+  "ENDS_AT": "Ends at",
+
+  "DAY_NAMES": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+
+  "SHIFT_ARY": [
+    "Morning",
+    "Afternoon",
+    "Night"
+  ]
+
+}

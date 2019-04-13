@@ -2,7 +2,8 @@
   <ion-toolbar style='background:#05a344'>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-img style="width:50px; height:50px" src="assets/img/code_club_logo_header.png" alt="Code Club logo"></ion-img>
+        <ion-img style="width:50px; height:50px" src="assets/img/code_club_logo_header.png" alt="Code Club logo">
+        </ion-img>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="start">
@@ -17,33 +18,74 @@
     </ion-buttons>
   </ion-toolbar>
   <ion-toolbar color="gray">
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-title>BACK</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>BACK</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="form-content">
-  <!-- <form class="form" [formGroup]="createClassForm" (submit)="createClass()"> -->
-  <!-- <h1> text-center margin-bottom>{{ 'NEW_CLASS' | translate}}</h1> -->
-  <ion-list>
-    <ion-item>
-      <ion-label>{{ 'CODE_CLUB' | translate }}</ion-label>
-      <ion-select placeholder="{{ 'CHOOSE_CLUB' | translate }}">
-        <ion-select-option *ngFor="let club of clubs" value={{club.id}}>{{club.name}}</ion-select-option>
-      </ion-select>
-    </ion-item>
+  <form class="form" [formGroup]="createClassForm" (submit)="createClass()">
+    <!-- <h1> text-center margin-bottom>{{ 'NEW_CLASS' | translate}}</h1> -->
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" color="primary">{{ 'CLASS_NAME_INPUT' | translate }}</ion-label>
+        <ion-input type="text" formControlName="className" required></ion-input>
+      </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.className">
+          <div class="error-message"
+            *ngIf="createClassForm.get('className').hasError(validation.type) && (createClassForm.get('className').dirty || createClassForm.get('className').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
 
-    <!-- <ion-item>
-      <ion-label position="floating" color="primary">{{ 'CLASS_NAME_INPUT' | translate }}</ion-label>
-      <ion-input type="text" formControlName="className" required></ion-input>
-    </ion-item> -->
-  </ion-list>
-  <!--
-        <div *ngIf="selectedItem" padding>
-          You navigated here from <b>{{selectedItem.title }}</b>
+      <ion-item>
+        <ion-label>{{ 'CODE_CLUB' | translate }}</ion-label>
+        <ion-select placeholder="{{ 'CHOOSE_CLUB' | translate }}" formControlName="club" required>
+          <ion-select-option *ngFor="let club of clubs" value={{club.id}}>{{club.name}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.club">
+            <div class="error-message"
+              *ngIf="createClassForm.get('club').hasError(validation.type) && (createClassForm.get('club').dirty || createClassForm.get('club').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
         </div>
-      -->
-<!-- </form> -->
+
+      <ion-item>
+        <ion-label>{{ 'WEEKDAY' | translate }}</ion-label>
+        <ion-select>
+          <ion-select-option *ngFor="let dayName of dayNamesAry" value='1'>{{dayName}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'SHIFT' | translate }}</ion-label>
+        <ion-select>
+          <ion-select-option *ngFor="let shift of shiftAry" value='1'>{{shift}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'STARTS_AT' | translate }}</ion-label>
+        <ion-datetime displayFormat="HH:mm"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'ENDS_AT' | translate }}</ion-label>
+        <ion-datetime displayFormat="HH:mm"></ion-datetime>
+      </ion-item>
+
+      <div padding>
+        <ion-button shape="round" expand="block" type="submit">{{ 'SAVE_NEW_CLASS' | translate }}</ion-button>
+      </div>
+
+    </ion-list>
+  </form>
 </ion-content>

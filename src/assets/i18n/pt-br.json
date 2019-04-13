@@ -58,6 +58,7 @@
   "OK_BUTTON": "Ok",
   "FORGOT_PASSWORD_SUBMIT": "ENVIE-ME UMA NOVA SENHA",
   "REGISTER_CLASS": "ADICIONAR NOVA TURMA",
+  "SAVE_NEW_CLASS": "GRAVAR A NOVA TURMA",
 
   "LIST_MASTER_TITLE": "Clubs",
 
@@ -104,6 +105,27 @@
   "NEW_PWD": "Senha nova",
   "OLD_PWD": "Senha velha",
   "FIELDS_NOT_EMPTY": "Por favor preencha os campos",
-  "COUNTRY": "País"
+  "COUNTRY": "País",
 
-  }
+  "WEEKDAY": "Dia da semana",
+  "SHIFT": "Turno",
+  "STARTS_AT": "Começa às",
+  "ENDS_AT": "Termina às",
+
+  "DAY_NAMES": [
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
+    "Domingo"
+  ],
+
+  "SHIFT_ARY": [
+    "Manhã",
+    "Tarde",
+    "Noite"
+  ]
+  
+}
