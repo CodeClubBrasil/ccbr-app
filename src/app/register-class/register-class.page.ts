@@ -25,6 +25,7 @@ export class RegisterClassPage implements OnInit {
   private shiftAry: string;
   private saveNewClass: string;
   private classNameRequiredErrorString: string;
+  private clubRequiredErrorString: string;
 
   public validationMessages = {};
 
@@ -72,6 +73,9 @@ export class RegisterClassPage implements OnInit {
     this.translateService.get('CLASS_NAME_REQUIRED').subscribe(value => {
       this.classNameRequiredErrorString = value;
     });
+    this.translateService.get('CLUB_REQUIRED').subscribe(value => {
+      this.clubRequiredErrorString = value;
+    });
   }
 
   clubs: any;
@@ -100,7 +104,7 @@ export class RegisterClassPage implements OnInit {
         { type: 'required', message: this.classNameRequiredErrorString }
       ],
       club: [
-        { type: 'required', message: this.classNameRequiredErrorString }
+        { type: 'required', message: this.clubRequiredErrorString }
       ]
     };
   }
