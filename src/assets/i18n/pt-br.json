@@ -59,6 +59,13 @@
   "FORGOT_PASSWORD_SUBMIT": "ENVIE-ME UMA NOVA SENHA",
   "REGISTER_CLASS": "ADICIONAR NOVA TURMA",
   "SAVE_NEW_CLASS": "GRAVAR A NOVA TURMA",
+  "CLASS_NAME_INPUT": "Nome da turma",
+  "CLASS_NAME_REQUIRED": "O nome da classe é necessário",
+  "CLUB_REQUIRED": "Selecione um club",
+  "WEEKDAY_REQUIRED": "Selecione um dia da semana",
+  "SHIFT_REQUIRED": "Selecione um turno",
+  "STARTS_AT_REQUIRED": "Insira um horário no campo começa às",
+  "ENDS_AT_REQUIRED": "Insira um horário no campo termina às",
 
   "LIST_MASTER_TITLE": "Clubs",
 

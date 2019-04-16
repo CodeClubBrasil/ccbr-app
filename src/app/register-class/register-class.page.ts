@@ -26,6 +26,10 @@ export class RegisterClassPage implements OnInit {
   private saveNewClass: string;
   private classNameRequiredErrorString: string;
   private clubRequiredErrorString: string;
+  private weekDayRequiredErrorString: string;
+  private shiftRequiredErrorString: string;
+  private startsAtRequiredErrorString: string;
+  private endsAtRequiredErrorString: string;
 
   public validationMessages = {};
 
@@ -76,6 +80,18 @@ export class RegisterClassPage implements OnInit {
     this.translateService.get('CLUB_REQUIRED').subscribe(value => {
       this.clubRequiredErrorString = value;
     });
+    this.translateService.get('WEEKDAY_REQUIRED').subscribe(value => {
+      this.weekDayRequiredErrorString = value;
+    });
+    this.translateService.get('SHIFT_REQUIRED').subscribe(value => {
+      this.shiftRequiredErrorString = value;
+    });
+    this.translateService.get('STARTS_AT_REQUIRED').subscribe(value => {
+      this.startsAtRequiredErrorString = value;
+    });
+    this.translateService.get('ENDS_AT_REQUIRED').subscribe(value => {
+      this.endsAtRequiredErrorString = value;
+    });
   }
 
   clubs: any;
@@ -91,7 +107,27 @@ export class RegisterClassPage implements OnInit {
         ])
       ),
       club: new FormControl(
+        Validators.compose([
+          Validators.required
+        ])
+      ),
+      weekDay: new FormControl(
+        Validators.compose([
+          Validators.required
+        ])
+      ),
+      shift: new FormControl(
+        Validators.compose([
+          Validators.required
+        ])
+      ),
+      startsAt: new FormControl(
         '',
+        Validators.compose([
+          Validators.required
+        ])
+      ),
+      endsAt: new FormControl(
         Validators.compose([
           Validators.required
         ])
@@ -105,6 +141,15 @@ export class RegisterClassPage implements OnInit {
       ],
       club: [
         { type: 'required', message: this.clubRequiredErrorString }
+      ],
+      weekDay: [
+        { type: 'required', message: this.clubRequiredErrorString }
+      ],
+      shift: [
+        { type: 'required', message: this.shiftRequiredErrorString }
+      ],
+      startsAt: [
+        { type: 'required', message: this.startsAtRequiredErrorString }
       ]
     };
   }

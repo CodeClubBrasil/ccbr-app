@@ -62,6 +62,11 @@
   "SAVE_NEW_CLASS": "SAVE NEW CLASS",
   "CLASS_NAME_REQUIRED": "Class name is required",
   "CLUB_REQUIRED": "Select a club",
+  "WEEKDAY_REQUIRED": "Select a weekday",
+  "SHIFT_REQUIRED": "Select a shift",
+  "STARTS_AT_REQUIRED": "Insert a time in starts at",
+  "ENDS_AT_REQUIRED": "Insert a time in ends at",
+
 
   "LIST_MASTER_TITLE": "Clubs",
 
