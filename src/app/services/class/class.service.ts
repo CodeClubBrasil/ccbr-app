@@ -15,13 +15,15 @@ export class ClassService {
   constructor() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        this.classesRef = firebase.firestore().collection(`/userProfile/${user.uid}/class`);
+        this.classesRef = firebase
+          .firestore()
+          .collection(`/userProfile/${user.uid}/class`);
       }
     });
   }
 
   createClass(
-    className: string, codeClub: string,  weekDay: string, shift: string,
+    className: string, codeClub: string, weekDay: string, shift: string,
     startsAt: Datetime, endsAt: Datetime
   ): Promise<firebase.firestore.DocumentReference> {
     return this.classesRef.add(
@@ -35,4 +37,14 @@ export class ClassService {
       }
     );
   }
+
+  getClassList(): firebase.firestore.CollectionReference {
+    return this.classesRef;
+  }
+
+  getClassDetail(classId: string): firebase.firestore.DocumentReference {
+    return this.classesRef.doc(classId);
+  }
+
+
 }
