@@ -27,7 +27,6 @@
 
 <ion-content padding class="form-content">
   <form class="form" [formGroup]="createClassForm" (submit)="createClass()">
-    <!-- <h1> text-center margin-bottom>{{ 'NEW_CLASS' | translate}}</h1> -->
     <ion-list>
       <ion-item>
         <ion-label position="floating" color="primary">{{ 'CLASS_NAME_INPUT' | translate }}</ion-label>
@@ -103,8 +102,16 @@
 
       <ion-item>
         <ion-label>{{ 'ENDS_AT' | translate }}</ion-label>
-        <ion-datetime displayFormat="HH:mm"></ion-datetime>
+        <ion-datetime displayFormat="HH:mm" formControlName="endsAt" required></ion-datetime>
       </ion-item>
+      <div class="validation-errors">
+        <ng-container *ngFor="let validation of validationMessages.endsAt">
+          <div class="error-message"
+            *ngIf="createClassForm.get('endsAt').hasError(validation.type) && (createClassForm.get('endsAt').dirty || createClassForm.get('endsAt').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
 
       <div padding>
         <ion-button shape="round" expand="block" type="submit">{{ 'SAVE_NEW_CLASS' | translate }}</ion-button>
