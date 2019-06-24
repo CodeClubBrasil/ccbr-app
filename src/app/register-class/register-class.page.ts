@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoadingController } from '@ionic/angular';
+import { LoadingController, AlertController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { CodeClubApiService } from '../services/api/code-club-api.service';
 import { AuthService } from '../services/authentication/auth.service';
 import { Router } from '@angular/router';
+import { ClassService } from '../services/class/class.service';
 
 @Component({
   selector: 'app-register-class',
@@ -31,12 +32,20 @@ export class RegisterClassPage implements OnInit {
   private startsAtRequiredErrorString: string;
   private endsAtRequiredErrorString: string;
 
+  private warningAlert: string;
+  private formError: string;
+  private formErrorMessage: string;
+  private okButton: string;
+
   public validationMessages = {};
+  loading: any;
 
   constructor(
     private codeClubApiService: CodeClubApiService,
+    private alertController: AlertController,
     public loadingController: LoadingController,
     private formBuilder: FormBuilder,
+    private classService: ClassService,
     private translateService: TranslateService,
     private authService: AuthService,
     private router: Router
@@ -92,6 +101,18 @@ export class RegisterClassPage implements OnInit {
     this.translateService.get('ENDS_AT_REQUIRED').subscribe(value => {
       this.endsAtRequiredErrorString = value;
     });
+    this.translateService.get('WARNING_ALERT').subscribe(value => {
+      this.warningAlert = value;
+    });
+    this.translateService.get('FORM_ERROR').subscribe(value => {
+      this.formError = value;
+    });
+    this.translateService.get('FORM_ERROR_MESSAGE').subscribe(value => {
+      this.formErrorMessage = value;
+    });
+    this.translateService.get('OK_BUTTON').subscribe(value => {
+      this.okButton = value;
+    });
   }
 
   clubs: any;
@@ -128,6 +149,7 @@ export class RegisterClassPage implements OnInit {
         ])
       ),
       endsAt: new FormControl(
+        '',
         Validators.compose([
           Validators.required
         ])
@@ -150,6 +172,9 @@ export class RegisterClassPage implements OnInit {
       ],
       startsAt: [
         { type: 'required', message: this.startsAtRequiredErrorString }
+      ],
+      endsAt: [
+        { type: 'required', message: this.endsAtRequiredErrorString }
       ]
     };
   }
@@ -174,8 +199,54 @@ export class RegisterClassPage implements OnInit {
     this.router.navigateByUrl('');
   }
 
-  createClass() {
-    alert('Hello World!!!');
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: this.warningAlert,
+      subHeader: this.formError,
+      message: this.formErrorMessage,
+      buttons: [this.okButton]
+    });
+
+    await alert.present();
   }
+
+  async createClass(): Promise<void> {
+    if (!this.createClassForm.valid) {
+      await this.presentAlert();
+    } else {
+      const className: string = this.createClassForm.value.className;
+      const club: string = this.createClassForm.value.club;
+      const weekDay: string = this.createClassForm.value.weekDay;
+      const shift: string = this.createClassForm.value.shift;
+      const startsAt: any = this.createClassForm.value.startsAt;
+      const endsAt: any = this.createClassForm.value.endsAt;
+
+      this.classService.createClass(
+        className,
+        club,
+        weekDay,
+        shift,
+        startsAt,
+        endsAt).then(
+          () => {
+            this.loading.dismiss().then(() => {
+              this.router.navigateByUrl('home');
+            });
+          },
+          error => {
+            this.loading.dismiss().then(async () => {
+              const alert = await this.alertController.create({
+                message: error.message,
+                buttons: [{ text: 'OK', role: 'cancel' }]
+              });
+              await alert.present();
+            });
+          }
+        );
+        this.loading = await this.loadingController.create();
+        await this.loading.present();
+    }
+  }
+
 
 }
