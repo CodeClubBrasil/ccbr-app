@@ -30,7 +30,7 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating" color="primary">{{ 'CLASS_NAME_INPUT' | translate }}</ion-label>
-        <ion-input type="text" formControlName="className" required></ion-input>
+        <ion-input type="text" formControlName="className"></ion-input>
       </ion-item>
       <div class="validation-errors">
         <ng-container *ngFor="let validation of validationMessages.className">
@@ -87,30 +87,32 @@
         </ng-container>
       </div>
 
-      <ion-item>
-        <ion-label>{{ 'STARTS_AT' | translate }}</ion-label>
-        <ion-datetime displayFormat="HH:mm" formControlName="startsAt" required></ion-datetime>
-      </ion-item>
-      <div class="validation-errors">
-        <ng-container *ngFor="let validation of validationMessages.startsAt">
-          <div class="error-message"
-            *ngIf="createClassForm.get('startsAt').hasError(validation.type) && (createClassForm.get('startsAt').dirty || createClassForm.get('startsAt').touched)">
-            {{ validation.message }}
-          </div>
-        </ng-container>
-      </div>
+      <div formGroupName="validateTime">
+        <ion-item>
+          <ion-label>{{ 'STARTS_AT' | translate }}</ion-label>
+          <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" formControlName="startsAt" required></ion-datetime>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.startsAt">
+            <div class="error-message"
+              *ngIf="createClassForm.get('validateTime').get('startsAt').hasError(validation.type) && (createClassForm.get('validateTime').get('startsAt').dirty || createClassForm.get('validateTime').get('startsAt').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
 
-      <ion-item>
-        <ion-label>{{ 'ENDS_AT' | translate }}</ion-label>
-        <ion-datetime displayFormat="HH:mm" formControlName="endsAt" required></ion-datetime>
-      </ion-item>
-      <div class="validation-errors">
-        <ng-container *ngFor="let validation of validationMessages.endsAt">
-          <div class="error-message"
-            *ngIf="createClassForm.get('endsAt').hasError(validation.type) && (createClassForm.get('endsAt').dirty || createClassForm.get('endsAt').touched)">
-            {{ validation.message }}
-          </div>
-        </ng-container>
+        <ion-item>
+          <ion-label>{{ 'ENDS_AT' | translate }}</ion-label>
+          <ion-datetime displayFormat="HH:mm" formControlName="endsAt" required></ion-datetime>
+        </ion-item>
+        <div class="validation-errors">
+          <ng-container *ngFor="let validation of validationMessages.endsAt">
+            <div class="error-message"
+              *ngIf="createClassForm.get('validateTime').get('endsAt').hasError(validation.type) && (createClassForm.get('validateTime').get('endsAt').dirty || createClassForm.get('validateTime').get('endsAt').touched)">
+              {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
       </div>
 
       <div padding>

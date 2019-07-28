@@ -64,8 +64,10 @@
   "CLUB_REQUIRED": "Selecione um club",
   "WEEKDAY_REQUIRED": "Selecione um dia da semana",
   "SHIFT_REQUIRED": "Selecione um turno",
+  
   "STARTS_AT_REQUIRED": "Insira um horário no campo começa às",
   "ENDS_AT_REQUIRED": "Insira um horário no campo termina às",
+  "ENDS_AT_LESS_STARTS_AT": "Insira em termina às um horário maior que em começa às",
 
   "LIST_MASTER_TITLE": "Clubs",
 

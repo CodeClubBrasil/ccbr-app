@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoadingController, AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AlertController, LoadingController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { CodeClubApiService } from '../services/api/code-club-api.service';
 import { AuthService } from '../services/authentication/auth.service';
-import { Router } from '@angular/router';
 import { ClassService } from '../services/class/class.service';
+import { TimeValidator } from '../validators/time.validator';
+
 
 @Component({
   selector: 'app-register-class',
@@ -14,6 +16,8 @@ import { ClassService } from '../services/class/class.service';
 })
 export class RegisterClassPage implements OnInit {
   private createClassForm: FormGroup;
+  private validateTimeGroup: FormGroup;
+
   private newClass: string;
   private codeClub: string;
   private classNameInput: string;
@@ -29,8 +33,11 @@ export class RegisterClassPage implements OnInit {
   private clubRequiredErrorString: string;
   private weekDayRequiredErrorString: string;
   private shiftRequiredErrorString: string;
+
   private startsAtRequiredErrorString: string;
   private endsAtRequiredErrorString: string;
+  private endsAtIsLessThanStartsAt: string;
+
 
   private warningAlert: string;
   private formError: string;
@@ -113,6 +120,9 @@ export class RegisterClassPage implements OnInit {
     this.translateService.get('OK_BUTTON').subscribe(value => {
       this.okButton = value;
     });
+    this.translateService.get('ENDS_AT_LESS_STARTS_AT').subscribe(value => {
+      this.endsAtIsLessThanStartsAt = value;
+    });
   }
 
   clubs: any;
@@ -120,47 +130,7 @@ export class RegisterClassPage implements OnInit {
   ngOnInit() {
     this.getClubs();
 
-    this.createClassForm = this.formBuilder.group({
-      className: new FormControl(
-        '',
-        Validators.compose([
-          Validators.required
-        ])
-      ),
-      club: new FormControl(
-        Validators.compose([
-          Validators.required
-        ])
-      ),
-      weekDay: new FormControl(
-        Validators.compose([
-          Validators.required
-        ])
-      ),
-      shift: new FormControl(
-        Validators.compose([
-          Validators.required
-        ])
-      ),
-      startsAt: new FormControl(
-        '',
-        Validators.compose([
-          Validators.required
-        ])
-      ),
-      endsAt: new FormControl(
-        '',
-        Validators.compose([
-          Validators.required
-        ])
-      )
-    });
-
-
     this.validationMessages = {
-      className: [
-        { type: 'required', message: this.classNameRequiredErrorString }
-      ],
       club: [
         { type: 'required', message: this.clubRequiredErrorString }
       ],
@@ -175,8 +145,80 @@ export class RegisterClassPage implements OnInit {
       ],
       endsAt: [
         { type: 'required', message: this.endsAtRequiredErrorString }
+      ],
+      validateTime: [
+        {
+          type: 'endTimeIsLessThanStartTime',
+          message: this.endsAtIsLessThanStartsAt
+        }
       ]
     };
+
+    this.validateTimeGroup = new FormGroup(
+      {
+        startsAt: new FormControl(
+          '',
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+        endsAt: new FormControl(
+          '',
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+      },
+      (formGroup: FormGroup) => {
+        return TimeValidator.endTimeIsLessThanStartTime(formGroup);
+      }
+    );
+
+    this.createClassForm = this.formBuilder.group(
+      {
+        className: new FormControl(''),
+        club: new FormControl(
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+        weekDay: new FormControl(
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+        shift: new FormControl(
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+        startsAt: new FormControl(
+          '',
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+        endsAt: new FormControl(
+          '',
+          Validators.compose([
+            Validators.required
+          ])
+        ),
+        validateTime: this.validateTimeGroup
+      }
+    );
+
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: this.warningAlert,
+      subHeader: this.formError,
+      message: this.formErrorMessage,
+      buttons: [this.okButton]
+    });
+
+    await alert.present();
   }
 
   async getClubs() {
@@ -197,17 +239,6 @@ export class RegisterClassPage implements OnInit {
   async logOut(): Promise<void> {
     await this.authService.logoutUser();
     this.router.navigateByUrl('');
-  }
-
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: this.warningAlert,
-      subHeader: this.formError,
-      message: this.formErrorMessage,
-      buttons: [this.okButton]
-    });
-
-    await alert.present();
   }
 
   async createClass(): Promise<void> {

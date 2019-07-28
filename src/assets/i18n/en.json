@@ -64,8 +64,10 @@
   "CLUB_REQUIRED": "Select a club",
   "WEEKDAY_REQUIRED": "Select a weekday",
   "SHIFT_REQUIRED": "Select a shift",
+  
   "STARTS_AT_REQUIRED": "Insert a time in starts at",
   "ENDS_AT_REQUIRED": "Insert a time in ends at",
+  "ENDS_AT_LESS_STARTS_AT": "Insert an ends at time greater than starts at",
 
 
   "LIST_MASTER_TITLE": "Clubs",
