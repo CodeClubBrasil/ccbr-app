@@ -32,14 +32,14 @@
         <ion-label position="floating" color="primary">{{ 'CLASS_NAME_INPUT' | translate }}</ion-label>
         <ion-input type="text" formControlName="className"></ion-input>
       </ion-item>
-      <div class="validation-errors">
+      <!-- <div class="validation-errors">
         <ng-container *ngFor="let validation of validationMessages.className">
           <div class="error-message"
             *ngIf="createClassForm.get('className').hasError(validation.type) && (createClassForm.get('className').dirty || createClassForm.get('className').touched)">
             {{ validation.message }}
           </div>
         </ng-container>
-      </div>
+      </div> -->
 
       <ion-item>
         <ion-label>{{ 'CODE_CLUB' | translate }}</ion-label>
@@ -48,14 +48,14 @@
           </ion-select-option>
         </ion-select>
       </ion-item>
-      <div class="validation-errors">
+      <!-- <div class="validation-errors">
         <ng-container *ngFor="let validation of validationMessages.club">
           <div class="error-message"
             *ngIf="createClassForm.get('club').hasError(validation.type) && (createClassForm.get('club').dirty || createClassForm.get('club').touched)">
             {{ validation.message }}
           </div>
         </ng-container>
-      </div>
+      </div> -->
 
       <ion-item>
         <ion-label>{{ 'WEEKDAY' | translate }}</ion-label>
@@ -63,14 +63,14 @@
           <ion-select-option *ngFor="let dayName of dayNamesAry" value='1'>{{dayName}}</ion-select-option>
         </ion-select>
       </ion-item>
-      <div class="validation-errors">
+      <!-- <div class="validation-errors">
         <ng-container *ngFor="let validation of validationMessages.weekDay">
           <div class="error-message"
             *ngIf="createClassForm.get('weekDay').hasError(validation.type) && (createClassForm.get('weekDay').dirty || createClassForm.get('weekDay').touched)">
             {{ validation.message }}
           </div>
         </ng-container>
-      </div>
+      </div> -->
 
       <ion-item>
         <ion-label>{{ 'SHIFT' | translate }}</ion-label>
@@ -78,41 +78,41 @@
           <ion-select-option *ngFor="let shift of shiftAry" value='1'>{{shift}}</ion-select-option>
         </ion-select>
       </ion-item>
-      <div class="validation-errors">
+      <!-- <div class="validation-errors">
         <ng-container *ngFor="let validation of validationMessages.shift">
           <div class="error-message"
             *ngIf="createClassForm.get('shift').hasError(validation.type) && (createClassForm.get('shift').dirty || createClassForm.get('shift').touched)">
             {{ validation.message }}
           </div>
         </ng-container>
-      </div>
+      </div> -->
 
       <div formGroupName="validateTime">
         <ion-item>
           <ion-label>{{ 'STARTS_AT' | translate }}</ion-label>
           <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" formControlName="startsAt" required></ion-datetime>
         </ion-item>
-        <div class="validation-errors">
+        <!-- <div class="validation-errors">
           <ng-container *ngFor="let validation of validationMessages.startsAt">
             <div class="error-message"
               *ngIf="createClassForm.get('validateTime').get('startsAt').hasError(validation.type) && (createClassForm.get('validateTime').get('startsAt').dirty || createClassForm.get('validateTime').get('startsAt').touched)">
               {{ validation.message }}
             </div>
           </ng-container>
-        </div>
+        </div> -->
 
         <ion-item>
           <ion-label>{{ 'ENDS_AT' | translate }}</ion-label>
           <ion-datetime displayFormat="HH:mm" formControlName="endsAt" required></ion-datetime>
         </ion-item>
-        <div class="validation-errors">
+        <!-- <div class="validation-errors">
           <ng-container *ngFor="let validation of validationMessages.endsAt">
             <div class="error-message"
               *ngIf="createClassForm.get('validateTime').get('endsAt').hasError(validation.type) && (createClassForm.get('validateTime').get('endsAt').dirty || createClassForm.get('validateTime').get('endsAt').touched)">
               {{ validation.message }}
             </div>
           </ng-container>
-        </div>
+        </div> -->
       </div>
 
       <div padding>

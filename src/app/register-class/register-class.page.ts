@@ -18,7 +18,7 @@ export class RegisterClassPage implements OnInit {
   private createClassForm: FormGroup;
   private validateTimeGroup: FormGroup;
 
-  private newClass: string;
+  // private newClass: string;
   private codeClub: string;
   private classNameInput: string;
   private chooseClub: string;
@@ -57,9 +57,9 @@ export class RegisterClassPage implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {
-    this.translateService.get('NEW_CLASS').subscribe(value => {
-      this.newClass = value;
-    });
+    // this.translateService.get('NEW_CLASS').subscribe(value => {
+    //   this.newClass = value;
+    // });
     this.translateService.get('CODE_CLUB').subscribe(value => {
       this.codeClub = value;
     });
@@ -127,84 +127,88 @@ export class RegisterClassPage implements OnInit {
 
   clubs: any;
 
+
   ngOnInit() {
     this.getClubs();
 
     this.validationMessages = {
-      club: [
-        { type: 'required', message: this.clubRequiredErrorString }
-      ],
-      weekDay: [
-        { type: 'required', message: this.clubRequiredErrorString }
-      ],
-      shift: [
-        { type: 'required', message: this.shiftRequiredErrorString }
-      ],
-      startsAt: [
-        { type: 'required', message: this.startsAtRequiredErrorString }
-      ],
-      endsAt: [
-        { type: 'required', message: this.endsAtRequiredErrorString }
-      ],
-      validateTime: [
-        {
-          type: 'endTimeIsLessThanStartTime',
-          message: this.endsAtIsLessThanStartsAt
-        }
-      ]
-    };
+        club: [
+          { type: 'required', message: this.clubRequiredErrorString }
+        ],
+        weekDay: [
+          { type: 'required', message: this.clubRequiredErrorString }
+        ],
+        shift: [
+          { type: 'required', message: this.shiftRequiredErrorString }
+        ],
+        startsAt: [
+          { type: 'required', message: this.startsAtRequiredErrorString }
+        ],
+        endsAt: [
+          { type: 'required', message: this.endsAtRequiredErrorString }
+        ],
+        // validateTime: [
+        //   {
+        //     type: 'endTimeIsLessThanStartTime',
+        //     message: this.endsAtIsLessThanStartsAt
+        //   }
+        // ]
+      };
 
-    this.validateTimeGroup = new FormGroup(
-      {
-        startsAt: new FormControl(
-          '',
-          Validators.compose([
-            Validators.required
-          ])
-        ),
-        endsAt: new FormControl(
-          '',
-          Validators.compose([
-            Validators.required
-          ])
-        ),
-      },
-      (formGroup: FormGroup) => {
-        return TimeValidator.endTimeIsLessThanStartTime(formGroup);
-      }
-    );
+    // this.validateTimeGroup = new FormGroup(
+    //   {
+    //     startsAt: new FormControl(
+    //       '',
+    //       Validators.compose([
+    //         Validators.required
+    //       ])
+    //     ),
+    //     endsAt: new FormControl(
+    //       '',
+    //       Validators.compose([
+    //         Validators.required
+    //       ])
+    //     ),
+    //   },
+      // (formGroup: FormGroup) => {
+      //   return TimeValidator.endTimeIsLessThanStartTime(formGroup);
+      // }
+    // );
 
     this.createClassForm = this.formBuilder.group(
       {
         className: new FormControl(''),
         club: new FormControl(
-          Validators.compose([
-            Validators.required
-          ])
+          '',
+          // Validators.compose([
+          //   Validators.required
+          // ])
         ),
         weekDay: new FormControl(
-          Validators.compose([
-            Validators.required
-          ])
+          '',
+          // Validators.compose([
+          //   Validators.required
+          // ])
         ),
         shift: new FormControl(
-          Validators.compose([
-            Validators.required
-          ])
+          '',
+          // Validators.compose([
+          //   Validators.required
+          // ])
         ),
         startsAt: new FormControl(
           '',
-          Validators.compose([
-            Validators.required
-          ])
+          // Validators.compose([
+          //   Validators.required
+          // ])
         ),
         endsAt: new FormControl(
           '',
-          Validators.compose([
-            Validators.required
-          ])
+          // Validators.compose([
+          //   Validators.required
+          // ])
         ),
-        validateTime: this.validateTimeGroup
+        // validateTime: this.validateTimeGroup
       }
     );
 
